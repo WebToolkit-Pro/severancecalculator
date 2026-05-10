@@ -18,6 +18,8 @@ def nuclear_clean(path):
         'Ã€': '',              # Random artifact
         'âš¡': '&#9889;',       # Lightning bolt entity
         'Ã„â€¹': '&nearr;',    # Nav arrow variant
+        'Ã¢Å¡ ¡': '<i data-lucide="zap"></i>', # Button icon mangled
+        '&mdash; Ã‚': '--',   # Result placeholder mangled
     }
     
     for old, new in replacements.items():
