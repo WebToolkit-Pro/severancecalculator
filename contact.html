@@ -1,34 +1,58 @@
-<!DOCTYPE html>
+﻿<!DOCTYPE html>
 <html lang="en">
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Contact Us — SeveranceCalculator.xyz | Support & Feedback</title>
-    <meta name="description" content="Get in touch with the SeveranceCalculator.xyz team for support, feature requests, or business inquiries. Part of the WebToolkit Pro network.">
-    <meta name="keywords" content="contact severance calculator, financial tool support, wtkpro contact">
+    <title>Contact Us — SeveranceCalculator.xyz</title>
     <link rel="stylesheet" href="css/style.css">
     <script src="https://unpkg.com/lucide@latest"></script>
 </head>
-<body class="info-page">
-    <nav class="navbar">
-        <a href="/" class="nav-brand"><i data-lucide="briefcase"></i> SeveranceCalculator.xyz</a>
-        <div class="nav-links"><a href="/">Calculator</a></div>
-    </nav>
-    <main class="container" style="margin-top: 2rem;">
-        <div class="card" style="text-align: center;">
-            <i data-lucide="mail" style="width: 48px; height: 48px; color: var(--primary); margin-bottom: 1rem;"></i>
-            <h1>Get in Touch</h1>
-            <p style="margin-top: 1rem; color: var(--text-muted);">
-                Have questions about our calculator or want to suggest a new country?
-            </p>
-            <p style="margin-top: 1.5rem; font-size: 1.25rem; font-weight: 600;">
-                <a href="mailto:support@wtkpro.site" style="color: var(--primary); text-decoration: none;">support@wtkpro.site</a>
-            </p>
-            <p style="margin-top: 2rem; font-size: 0.85rem; color: var(--text-muted);">
-                A project by WebToolkit Pro.
-            </p>
+<body>
+    <nav class="topnav">
+        <a href="/" class="topnav-brand">
+            <i data-lucide="briefcase"></i> SeveranceCalculator.xyz
+        </a>
+        <div class="topnav-links" id="topnav-links">
+            <a href="/#severance-pay-calculator-2025">Calculator</a>
+            <a href="/blog/index.html">Legal Guides</a>
+            <a href="/about.html">About Us</a>
+            <a href="https://wtkpro.site" target="_blank">Pro Tools ↗</a>
         </div>
+        <button class="menu-toggle" onclick="toggleMenu()">
+            <i data-lucide="menu"></i>
+        </button>
+    </nav>
+    <header>
+        <div class="badge">Support</div>
+        <h1>Get In Touch<br><em>We are Here to Help</em></h1>
+        <div class="breadcrumb">
+            <a href="/">Home</a> <span>›</span> 
+            <span>Contact Us</span>
+        </div>
+    </header>
+    <main>
+        <article class="card">
+            <h2 style="font-weight: 700; margin-bottom: 20px;">Support & Feedback</h2>
+            <p>Have a question about a specific calculation? Or want to suggest a new country for our tool? We'd love to hear from you.</p>
+            <p style="margin-top: 15px;">Email us at: <strong>support@wtkpro.site</strong></p>
+        </article>
     </main>
+    <footer>
+        <div class="container" style="display: grid; grid-template-columns: repeat(auto-fit, minmax(200px, 1fr)); gap: 40px; padding: 60px 16px;">
+            <div>
+                <h4>SeveranceCalculator.xyz</h4>
+                <p>Professional global financial tools powered by <a href="https://wtkpro.site" target="_blank">WebToolkit Pro</a>.</p>
+            </div>
+            <div>
+                <h4>Legal</h4>
+                <ul>
+                    <li><a href="/legal/privacy-policy.html">Privacy Policy</a></li>
+                    <li><a href="/legal/terms-and-conditions.html">Terms & Conditions</a></li>
+                </ul>
+            </div>
+        </div>
+    </footer>
+    <script src="js/script.js"></script>
     <script>lucide.createIcons();</script>
 </body>
 </html>
