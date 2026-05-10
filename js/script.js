@@ -183,7 +183,7 @@ function initAdDetection() {
 }
 
 function revealSections() {
-    document.querySelectorAll('.hidden-until-ad').forEach(el => {
+    document.querySelectorAll('.hidden-until-ad, .ad-container').forEach(el => {
         el.classList.add('reveal');
     });
 }

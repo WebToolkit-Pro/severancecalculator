@@ -204,13 +204,17 @@ select:focus, input:focus {
 
 /* --- Ad Detection & Hidden Tags --- */
 .ad-container {
+    display: none; /* Hidden by default */
     min-height: 100px;
     background: #f0f0f0;
     border: 1px dashed #ccc;
     margin: 2rem 0;
-    display: flex;
     align-items: center;
     justify-content: center;
+}
+
+.ad-container.reveal {
+    display: flex; /* Shown when ad loads */
 }
 
 .hidden-until-ad {
