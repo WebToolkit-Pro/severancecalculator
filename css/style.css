@@ -1,38 +1,37 @@
-﻿@import url('https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800&display=swap');
 
 :root {
-    --primary: #004d40;
-    --accent: #2e7d32;
-    --accent-light: #e8f5e9;
-    --text: #1a202c;
-    --muted: #4a5568;
-    --bg: #f7fafc;
-    --card-bg: #ffffff;
-    --border: #e2e8f0;
-    --shadow: 0 10px 15px -3px rgba(0, 0, 0, 0.1);
-    --radius: 12px;
-    
-    --fs-h1: clamp(2.25rem, 4vw + 1rem, 3.5rem);
-    --fs-h2: clamp(1.5rem, 2vw + 1rem, 2rem);
-    --fs-body: 1.05rem;
+  --bg: #F8FAFC;
+  --surface: #FFFFFF;
+  --border: #E2E8F0;
+  --text: #0F172A;
+  --muted: #64748B;
+  --accent: #064E3B;
+  --accent-mid: #059669;
+  --accent-light: #D1FAE5;
+  --accent-gold: #F59E0B;
+  --warn-bg: #FFFBEB;
+  --warn-text: #92400E;
+  --radius: 12px;
+  --rsm: 8px;
+  --shadow: 0 4px 6px -1px rgba(0, 0, 0, 0.1), 0 2px 4px -1px rgba(0, 0, 0, 0.06);
 }
 
 * { box-sizing: border-box; margin: 0; padding: 0; }
 html { scroll-behavior: smooth; }
-body {
-    font-family: 'Inter', -apple-system, sans-serif;
-    background: var(--bg);
-    color: var(--text);
-    line-height: 1.6;
-    font-size: var(--fs-body);
-    -webkit-font-smoothing: antialiased;
+body { 
+    font-family: 'Inter', sans-serif; 
+    background: var(--bg); 
+    color: var(--text); 
+    line-height: 1.6; 
+    font-size: 16px; 
 }
 
 /* --- PREMIUM HEADER --- */
 header {
-    background: var(--primary);
-    color: white;
-    padding: clamp(60px, 10vh, 100px) 16px;
+    background: var(--accent);
+    color: #fff;
+    padding: 60px 20px 80px;
     text-align: center;
     position: relative;
     overflow: hidden;
@@ -254,17 +253,17 @@ select:focus, input:focus {
 .btn-calc {
     width: 100%;
     padding: 18px;
-    background: var(--accent);
+    background: #2e7d32;
     color: #fff;
     border: none;
-    border-radius: var(--rsm);
+    border-radius: var(--radius);
     font-size: 16px;
     font-weight: 600;
     cursor: pointer;
     transition: transform .2s, background .2s;
 }
 
-.btn-calc:hover { background: #163d29; transform: translateY(-1px); }
+.btn-calc:hover { background: #1b5e20; transform: translateY(-1px); }
 
 /* --- RESULTS AREA --- */
 .results-area { display: none; }
@@ -337,7 +336,7 @@ summary::after {
     color: var(--accent-gold);
 }
 
-details[open] summary::after { content: 'âˆ’'; }
+details[open] summary::after { content: '−'; }
 
 details div { 
     padding: 0 24px 24px; 
@@ -421,4 +420,3 @@ footer a:hover {
     margin-top: 60px;
     border-top: 1px solid rgba(255,255,255,0.05);
 }
-

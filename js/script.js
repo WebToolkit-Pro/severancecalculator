@@ -36,8 +36,7 @@ function toggleMenu() {
 }
 
 function fmt(n, country) {
-    const key = country.toLowerCase();
-    const s = CountryConfig[key] ? CountryConfig[key].sym : '$';
+    const s = CountryConfig[country].sym;
     return s + Math.round(n).toLocaleString();
 }
 
