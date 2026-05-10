@@ -184,7 +184,7 @@ function calculate() {
     }
 
     // --- DISPLAY RESULTS ---
-    const resDiv = document.getElementById('results');
+    const resDiv = document.getElementById('RESULTS');
     resDiv.classList.add('show');
     
     document.getElementById('res-amount').textContent = eligible ? fmt(amount, country) : 'Not Eligible';
