@@ -1,0 +1,883 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Severance Pay Calculator 2025 — Free Global Tool</title>
+<meta name="description" content="Calculate your severance pay for USA, UK, UAE, India, Pakistan, Philippines and more. Free, accurate, based on local labor laws.">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link href="https://fonts.googleapis.com/css2?family=DM+Serif+Display:ital@0;1&family=DM+Sans:wght@300;400;500;600&display=swap" rel="stylesheet">
+
+<!-- ✅ REPLACE THIS WITH YOUR REAL GOOGLE ADSENSE CODE -->
+<!-- <script async src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=ca-pub-XXXXXXXXXXXXXXXX" crossorigin="anonymous"></script> -->
+
+<style>
+  :root {
+    --bg: #F7F5F0;
+    --surface: #FFFFFF;
+    --border: #E8E4DC;
+    --text: #1A1814;
+    --text-muted: #7A7570;
+    --accent: #1B4332;
+    --accent-light: #D8F3DC;
+    --accent-mid: #40916C;
+    --danger: #C0392B;
+    --warn: #E67E22;
+    --gold: #B7950B;
+    --radius: 12px;
+    --radius-sm: 8px;
+  }
+
+  * { box-sizing: border-box; margin: 0; padding: 0; }
+
+  body {
+    font-family: 'DM Sans', sans-serif;
+    background: var(--bg);
+    color: var(--text);
+    min-height: 100vh;
+    line-height: 1.6;
+  }
+
+  /* ── Header ── */
+  header {
+    background: var(--accent);
+    color: white;
+    padding: 48px 24px 40px;
+    text-align: center;
+    position: relative;
+    overflow: hidden;
+  }
+  header::before {
+    content: '';
+    position: absolute;
+    top: -60px; right: -60px;
+    width: 220px; height: 220px;
+    border-radius: 50%;
+    background: rgba(255,255,255,0.04);
+  }
+  header::after {
+    content: '';
+    position: absolute;
+    bottom: -40px; left: -40px;
+    width: 160px; height: 160px;
+    border-radius: 50%;
+    background: rgba(255,255,255,0.04);
+  }
+  .header-badge {
+    display: inline-block;
+    background: rgba(255,255,255,0.12);
+    border: 1px solid rgba(255,255,255,0.2);
+    border-radius: 20px;
+    font-size: 12px;
+    font-weight: 500;
+    letter-spacing: .06em;
+    text-transform: uppercase;
+    padding: 5px 14px;
+    margin-bottom: 18px;
+    color: rgba(255,255,255,0.85);
+  }
+  header h1 {
+    font-family: 'DM Serif Display', serif;
+    font-size: clamp(28px, 5vw, 48px);
+    font-weight: 400;
+    line-height: 1.15;
+    margin-bottom: 14px;
+    color: white;
+  }
+  header p {
+    font-size: 16px;
+    color: rgba(255,255,255,0.72);
+    max-width: 520px;
+    margin: 0 auto;
+  }
+  .country-pills {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 8px;
+    justify-content: center;
+    margin-top: 22px;
+  }
+  .cpill {
+    background: rgba(255,255,255,0.1);
+    border: 1px solid rgba(255,255,255,0.18);
+    border-radius: 16px;
+    padding: 4px 12px;
+    font-size: 12px;
+    color: rgba(255,255,255,0.8);
+  }
+
+  /* ── Ad banner placeholder ── */
+  .ad-banner {
+    background: #fff;
+    border: 1px dashed #ccc;
+    text-align: center;
+    padding: 12px;
+    font-size: 12px;
+    color: #aaa;
+    max-width: 728px;
+    margin: 0 auto;
+  }
+
+  /* ── Main layout ── */
+  main {
+    max-width: 860px;
+    margin: 0 auto;
+    padding: 32px 16px 60px;
+  }
+
+  /* ── Card ── */
+  .card {
+    background: var(--surface);
+    border: 1px solid var(--border);
+    border-radius: var(--radius);
+    padding: 28px;
+    margin-bottom: 20px;
+  }
+  .card-title {
+    font-family: 'DM Serif Display', serif;
+    font-size: 20px;
+    font-weight: 400;
+    margin-bottom: 20px;
+    color: var(--text);
+    display: flex;
+    align-items: center;
+    gap: 10px;
+  }
+  .card-title span.num {
+    width: 28px; height: 28px;
+    background: var(--accent);
+    color: white;
+    border-radius: 50%;
+    font-family: 'DM Sans', sans-serif;
+    font-size: 13px;
+    font-weight: 600;
+    display: flex; align-items: center; justify-content: center;
+    flex-shrink: 0;
+  }
+
+  /* ── Form elements ── */
+  .field { margin-bottom: 18px; }
+  label {
+    display: block;
+    font-size: 13px;
+    font-weight: 500;
+    color: var(--text-muted);
+    margin-bottom: 6px;
+    letter-spacing: .02em;
+    text-transform: uppercase;
+  }
+  select, input[type="number"], input[type="text"] {
+    width: 100%;
+    padding: 12px 14px;
+    border: 1.5px solid var(--border);
+    border-radius: var(--radius-sm);
+    font-family: 'DM Sans', sans-serif;
+    font-size: 15px;
+    color: var(--text);
+    background: var(--bg);
+    appearance: none;
+    -webkit-appearance: none;
+    outline: none;
+    transition: border-color .2s;
+  }
+  select:focus, input:focus {
+    border-color: var(--accent-mid);
+    background: white;
+  }
+  select {
+    background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='12' height='8' viewBox='0 0 12 8'%3E%3Cpath d='M1 1l5 5 5-5' stroke='%237A7570' stroke-width='1.5' fill='none' stroke-linecap='round'/%3E%3C/svg%3E");
+    background-repeat: no-repeat;
+    background-position: right 14px center;
+    padding-right: 36px;
+  }
+
+  .row2 { display: grid; grid-template-columns: 1fr 1fr; gap: 14px; }
+  @media(max-width:520px){ .row2 { grid-template-columns: 1fr; } }
+
+  .hint {
+    font-size: 12px;
+    color: var(--text-muted);
+    margin-top: 5px;
+  }
+
+  /* ── Currency symbol ── */
+  .input-wrap { position: relative; }
+  .input-wrap .sym {
+    position: absolute;
+    left: 14px; top: 50%; transform: translateY(-50%);
+    font-size: 15px;
+    color: var(--text-muted);
+    pointer-events: none;
+  }
+  .input-wrap input { padding-left: 28px; }
+
+  /* ── Button ── */
+  .btn-calc {
+    width: 100%;
+    padding: 16px;
+    background: var(--accent);
+    color: white;
+    border: none;
+    border-radius: var(--radius-sm);
+    font-family: 'DM Sans', sans-serif;
+    font-size: 16px;
+    font-weight: 600;
+    cursor: pointer;
+    letter-spacing: .02em;
+    transition: background .2s, transform .1s;
+    margin-top: 4px;
+  }
+  .btn-calc:hover { background: #163d29; }
+  .btn-calc:active { transform: scale(0.98); }
+
+  /* ── Results ── */
+  #results { display: none; }
+  #results.show { display: block; }
+
+  .result-hero {
+    background: var(--accent);
+    border-radius: var(--radius);
+    padding: 32px 28px;
+    text-align: center;
+    margin-bottom: 16px;
+    position: relative;
+    overflow: hidden;
+  }
+  .result-hero::before {
+    content: '';
+    position: absolute;
+    top: -30px; right: -30px;
+    width: 140px; height: 140px;
+    border-radius: 50%;
+    background: rgba(255,255,255,0.05);
+  }
+  .result-label {
+    font-size: 12px;
+    font-weight: 500;
+    letter-spacing: .08em;
+    text-transform: uppercase;
+    color: rgba(255,255,255,0.65);
+    margin-bottom: 10px;
+  }
+  .result-amount {
+    font-family: 'DM Serif Display', serif;
+    font-size: clamp(36px, 7vw, 56px);
+    color: white;
+    line-height: 1.1;
+    margin-bottom: 8px;
+  }
+  .result-sub {
+    font-size: 14px;
+    color: rgba(255,255,255,0.6);
+  }
+
+  .breakdown-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(160px,1fr));
+    gap: 12px;
+    margin-bottom: 16px;
+  }
+  .bk-item {
+    background: var(--bg);
+    border: 1px solid var(--border);
+    border-radius: var(--radius-sm);
+    padding: 14px 16px;
+  }
+  .bk-label { font-size: 11px; color: var(--text-muted); text-transform: uppercase; letter-spacing: .05em; margin-bottom: 4px; }
+  .bk-value { font-size: 18px; font-weight: 600; color: var(--text); }
+
+  .law-box {
+    background: var(--accent-light);
+    border: 1px solid #95d5b2;
+    border-radius: var(--radius-sm);
+    padding: 14px 16px;
+    font-size: 13px;
+    color: #1B4332;
+    line-height: 1.6;
+  }
+  .law-box strong { font-weight: 600; }
+
+  .warning-box {
+    background: #FEF9E7;
+    border: 1px solid #F9E79F;
+    border-radius: var(--radius-sm);
+    padding: 14px 16px;
+    font-size: 13px;
+    color: #7D6608;
+    margin-top: 12px;
+  }
+
+  /* ── FAQ ── */
+  .faq-section { margin-top: 40px; }
+  .faq-title {
+    font-family: 'DM Serif Display', serif;
+    font-size: 26px;
+    font-weight: 400;
+    margin-bottom: 20px;
+    color: var(--text);
+  }
+  details {
+    border: 1px solid var(--border);
+    border-radius: var(--radius-sm);
+    margin-bottom: 10px;
+    background: var(--surface);
+    overflow: hidden;
+  }
+  summary {
+    padding: 16px 18px;
+    font-weight: 500;
+    font-size: 15px;
+    cursor: pointer;
+    list-style: none;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    color: var(--text);
+  }
+  summary::-webkit-details-marker { display: none; }
+  summary::after { content: '+'; font-size: 20px; color: var(--accent-mid); font-weight: 300; }
+  details[open] summary::after { content: '−'; }
+  details p { padding: 0 18px 16px; font-size: 14px; color: var(--text-muted); line-height: 1.7; }
+
+  /* ── Country info cards ── */
+  .country-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(240px,1fr));
+    gap: 14px;
+    margin-top: 28px;
+  }
+  .country-card {
+    background: var(--surface);
+    border: 1px solid var(--border);
+    border-radius: var(--radius-sm);
+    padding: 18px;
+  }
+  .country-card .flag { font-size: 24px; margin-bottom: 8px; }
+  .country-card h3 { font-size: 15px; font-weight: 600; margin-bottom: 6px; }
+  .country-card p { font-size: 13px; color: var(--text-muted); line-height: 1.6; }
+
+  /* ── Footer ── */
+  footer {
+    text-align: center;
+    padding: 28px 16px;
+    font-size: 12px;
+    color: var(--text-muted);
+    border-top: 1px solid var(--border);
+    background: var(--surface);
+  }
+  footer a { color: var(--accent-mid); text-decoration: none; }
+
+  /* ── Disclaimer ── */
+  .disclaimer {
+    background: #FDF2F8;
+    border: 1px solid #F1A7D0;
+    border-radius: var(--radius-sm);
+    padding: 12px 16px;
+    font-size: 12px;
+    color: #7D3C68;
+    margin-top: 16px;
+    line-height: 1.6;
+  }
+
+  /* ── Scroll animation ── */
+  @keyframes fadeUp {
+    from { opacity: 0; transform: translateY(16px); }
+    to   { opacity: 1; transform: translateY(0); }
+  }
+  .fade-up { animation: fadeUp .4s ease both; }
+</style>
+</head>
+<body>
+
+<header>
+  <div class="header-badge">Free · No Sign-up · Updated 2025</div>
+  <h1>Severance Pay Calculator</h1>
+  <p>Know exactly what you're owed. Based on official labor laws for 8 countries.</p>
+  <div class="country-pills">
+    <span class="cpill">🇺🇸 USA</span>
+    <span class="cpill">🇬🇧 UK</span>
+    <span class="cpill">🇦🇪 UAE</span>
+    <span class="cpill">🇮🇳 India</span>
+    <span class="cpill">🇵🇰 Pakistan</span>
+    <span class="cpill">🇵🇭 Philippines</span>
+    <span class="cpill">🇸🇦 Saudi Arabia</span>
+    <span class="cpill">🇨🇦 Canada</span>
+  </div>
+</header>
+
+<!-- Top Ad -->
+<div style="background:#fff; padding:10px 0; border-bottom:1px solid #eee;">
+  <div class="ad-banner">
+    📢 Advertisement — Replace this with Google AdSense code
+    <!-- AdSense: <ins class="adsbygoogle" style="display:block" data-ad-client="ca-pub-XXXX" data-ad-slot="XXXX" data-ad-format="auto"></ins> -->
+  </div>
+</div>
+
+<main>
+
+  <!-- CALCULATOR CARD -->
+  <div class="card">
+    <div class="card-title"><span class="num">1</span> Enter Your Details</div>
+
+    <div class="field">
+      <label>Country</label>
+      <select id="country" onchange="updateCurrency()">
+        <option value="usa">🇺🇸 United States (USA)</option>
+        <option value="uk">🇬🇧 United Kingdom (UK)</option>
+        <option value="uae">🇦🇪 United Arab Emirates (UAE)</option>
+        <option value="india">🇮🇳 India</option>
+        <option value="pakistan">🇵🇰 Pakistan</option>
+        <option value="philippines">🇵🇭 Philippines</option>
+        <option value="saudi">🇸🇦 Saudi Arabia</option>
+        <option value="canada">🇨🇦 Canada</option>
+      </select>
+    </div>
+
+    <div class="row2">
+      <div class="field">
+        <label>Monthly Basic Salary</label>
+        <div class="input-wrap">
+          <span class="sym" id="currSym">$</span>
+          <input type="number" id="salary" placeholder="e.g. 5000" min="0">
+        </div>
+        <p class="hint">Use basic salary only (exclude allowances)</p>
+      </div>
+      <div class="field">
+        <label>Years of Service</label>
+        <input type="number" id="years" placeholder="e.g. 5" min="0" step="0.5">
+        <p class="hint">You can enter decimals (e.g. 3.5)</p>
+      </div>
+    </div>
+
+    <div class="row2">
+      <div class="field">
+        <label>Age (years)</label>
+        <input type="number" id="age" placeholder="e.g. 35" min="18" max="70">
+        <p class="hint">Required for UK & some regions</p>
+      </div>
+      <div class="field">
+        <label>Reason for Termination</label>
+        <select id="reason">
+          <option value="layoff">Layoff / Redundancy</option>
+          <option value="fired">Dismissed / Fired</option>
+          <option value="resigned">Resigned</option>
+          <option value="mutual">Mutual Agreement</option>
+          <option value="retirement">Retirement</option>
+        </select>
+      </div>
+    </div>
+
+    <button class="btn-calc" onclick="calculate()">⚡ Calculate Severance Pay</button>
+  </div>
+
+  <!-- RESULTS SECTION -->
+  <div id="results">
+
+    <div class="result-hero fade-up">
+      <div class="result-label">Your Estimated Severance Pay</div>
+      <div class="result-amount" id="res-amount">—</div>
+      <div class="result-sub" id="res-sub">Based on local labor law</div>
+    </div>
+
+    <div class="breakdown-grid fade-up" id="breakdown-grid"></div>
+
+    <div class="card fade-up">
+      <div class="card-title"><span class="num">2</span> Legal Basis</div>
+      <div class="law-box" id="law-text"></div>
+      <div class="warning-box" id="warn-text" style="display:none"></div>
+    </div>
+
+    <div class="disclaimer">
+      ⚖️ <strong>Disclaimer:</strong> This calculator provides estimates for informational purposes only. Actual entitlements depend on your employment contract, collective agreements, and specific circumstances. Always consult a qualified HR professional or labor lawyer for legal advice.
+    </div>
+
+    <!-- Mid Ad -->
+    <div style="margin: 24px 0;">
+      <div class="ad-banner" style="max-width:100%; padding:20px;">
+        📢 Advertisement — Replace with Google AdSense
+        <!-- AdSense Rectangle -->
+      </div>
+    </div>
+
+  </div>
+
+  <!-- COUNTRY INFO -->
+  <div class="card" style="margin-top:32px;">
+    <div class="card-title"><span class="num">3</span> Severance Laws by Country</div>
+    <div class="country-grid">
+      <div class="country-card">
+        <div class="flag">🇺🇸</div>
+        <h3>United States</h3>
+        <p>No federal law mandates severance. Standard practice is 1–2 weeks per year of service. WARN Act applies for mass layoffs (60-day notice or pay in lieu).</p>
+      </div>
+      <div class="country-card">
+        <div class="flag">🇬🇧</div>
+        <h3>United Kingdom</h3>
+        <p>Statutory Redundancy Pay based on age + years of service. Half week's pay (under 22), 1 week's pay (22–40), 1.5 week's pay (41+). Capped at £643/week (2025).</p>
+      </div>
+      <div class="country-card">
+        <div class="flag">🇦🇪</div>
+        <h3>UAE</h3>
+        <p>End-of-Service Gratuity: 21 days' basic salary per year for first 5 years. 30 days per year after 5 years. Based on basic salary only.</p>
+      </div>
+      <div class="country-card">
+        <div class="flag">🇮🇳</div>
+        <h3>India</h3>
+        <p>Gratuity Act: 15 days' salary per year of service for companies with 10+ employees. Minimum 5 years of service required. Capped at ₹20 lakhs.</p>
+      </div>
+      <div class="country-card">
+        <div class="flag">🇵🇰</div>
+        <h3>Pakistan</h3>
+        <p>Gratuity: 30 days' wages per completed year of service. Applies after 1 year. Also entitled to provident fund contributions from employer.</p>
+      </div>
+      <div class="country-card">
+        <div class="flag">🇵🇭</div>
+        <h3>Philippines</h3>
+        <p>Separation Pay: ½ month salary per year of service (authorized causes). 1 month salary per year if due to closure/disease. Minimum 1 month's salary.</p>
+      </div>
+      <div class="country-card">
+        <div class="flag">🇸🇦</div>
+        <h3>Saudi Arabia</h3>
+        <p>End-of-Service Award: ½ month salary per year for first 5 years. 1 month salary per year thereafter. Reduced if employee resigns (less than 10 years).</p>
+      </div>
+      <div class="country-card">
+        <div class="flag">🇨🇦</div>
+        <h3>Canada</h3>
+        <p>Common law entitlement: 1 month per year of service (approx). ESA minimum: 1 week per year (max 8 weeks). Varies significantly by province.</p>
+      </div>
+    </div>
+  </div>
+
+  <!-- FAQ -->
+  <div class="faq-section">
+    <p class="faq-title">Frequently Asked Questions</p>
+
+    <details>
+      <summary>What is severance pay?</summary>
+      <p>Severance pay is compensation given to an employee when their employment is terminated, usually due to layoffs, redundancy, or company closure. The amount depends on your country's labor laws, years of service, and employment contract terms.</p>
+    </details>
+
+    <details>
+      <summary>Is severance pay taxable?</summary>
+      <p>In most countries, severance pay is treated as taxable income. In the USA, it is subject to federal and state income tax plus Social Security. In the UK, the first £30,000 is tax-free. In UAE and Saudi Arabia, end-of-service gratuity is generally tax-free. Consult your local tax authority for specifics.</p>
+    </details>
+
+    <details>
+      <summary>What is the difference between severance and gratuity?</summary>
+      <p>Gratuity is a specific form of severance pay common in South Asia and the Middle East. It is a lump-sum payment calculated on years of service and basic salary, paid upon completion of a minimum service period (usually 5 years for gratuity, 1 year for general severance).</p>
+    </details>
+
+    <details>
+      <summary>Do I get severance pay if I resign?</summary>
+      <p>Generally no — severance is for involuntary terminations (layoffs, redundancy). However, in some countries like UAE and Pakistan, you may still be entitled to a partial gratuity even if you resign, depending on years of service. Philippines and Saudi Arabia also have specific rules for voluntary resignation.</p>
+    </details>
+
+    <details>
+      <summary>How is UAE End-of-Service Gratuity calculated?</summary>
+      <p>For the first 5 years: 21 days basic salary × number of years. After 5 years: 30 days basic salary × number of years beyond 5. The calculation is based on your last drawn basic salary, excluding allowances like housing and transport.</p>
+    </details>
+
+    <details>
+      <summary>What is Pakistan's severance law?</summary>
+      <p>Under the West Pakistan Industrial and Commercial Employment (Standing Orders) Ordinance 1968, workers are entitled to 30 days' wages for each completed year of service as gratuity. This applies to permanent employees who have completed at least one year of continuous service.</p>
+    </details>
+
+    <details>
+      <summary>Can my employer refuse to pay severance?</summary>
+      <p>If severance is mandated by law (as in UAE, India, Pakistan, Philippines), employers cannot legally refuse to pay. In countries where it's not legally required (USA, Canada partially), your employment contract terms govern entitlement. If denied unlawfully, you can file a complaint with your country's labor authority.</p>
+    </details>
+
+    <details>
+      <summary>How accurate is this calculator?</summary>
+      <p>This calculator uses the standard statutory formulas for each country and is updated for 2025 laws. It provides a reliable estimate but may not account for your specific employment contract, collective agreements, or special circumstances. Always verify with an HR professional or labor lawyer.</p>
+    </details>
+  </div>
+
+  <!-- Bottom Ad -->
+  <div style="margin: 32px 0 0;">
+    <div class="ad-banner" style="max-width:100%; padding:20px;">
+      📢 Advertisement — Replace with Google AdSense
+    </div>
+  </div>
+
+</main>
+
+<footer>
+  <p style="margin-bottom:6px;"><strong>SeveranceCalculator.xyz</strong> — Free Global Severance Pay Tool</p>
+  <p>For informational purposes only. Not legal advice. Laws are updated regularly — verify with official sources.</p>
+  <p style="margin-top:8px;"><a href="#">Privacy Policy</a> · <a href="#">About</a> · <a href="#">Contact</a></p>
+  <p style="margin-top:8px; color:#bbb;">© 2025 SeveranceCalculator.xyz</p>
+</footer>
+
+<script>
+const COUNTRIES = {
+  usa:         { sym:'$',  name:'USD', label:'United States' },
+  uk:          { sym:'£',  name:'GBP', label:'United Kingdom' },
+  uae:         { sym:'AED ', name:'AED', label:'UAE' },
+  india:       { sym:'₹',  name:'INR', label:'India' },
+  pakistan:    { sym:'Rs.', name:'PKR', label:'Pakistan' },
+  philippines: { sym:'₱',  name:'PHP', label:'Philippines' },
+  saudi:       { sym:'SAR ', name:'SAR', label:'Saudi Arabia' },
+  canada:      { sym:'CA$', name:'CAD', label:'Canada' }
+};
+
+function updateCurrency() {
+  const c = document.getElementById('country').value;
+  document.getElementById('currSym').textContent = COUNTRIES[c].sym;
+}
+
+function fmt(n, country) {
+  const sym = COUNTRIES[country].sym;
+  return sym + Number(n.toFixed(0)).toLocaleString();
+}
+
+function calculate() {
+  const country = document.getElementById('country').value;
+  const salary  = parseFloat(document.getElementById('salary').value) || 0;
+  const years   = parseFloat(document.getElementById('years').value)  || 0;
+  const age     = parseInt(document.getElementById('age').value)      || 30;
+  const reason  = document.getElementById('reason').value;
+
+  if (!salary || !years) {
+    alert('Please enter your monthly salary and years of service.');
+    return;
+  }
+
+  let amount = 0;
+  let breakdown = [];
+  let lawText   = '';
+  let warnText  = '';
+  let subLabel  = '';
+  let eligible  = true;
+
+  // ── USA ──────────────────────────────────────────────────
+  if (country === 'usa') {
+    const weeksPerYear = reason === 'resigned' ? 0 : 1;
+    if (reason === 'resigned') {
+      eligible = false;
+      warnText = 'In the USA, voluntary resignation typically does not entitle you to severance pay. It depends entirely on your employment contract.';
+    }
+    const weekSalary = (salary * 12) / 52;
+    amount = weekSalary * weeksPerYear * years;
+    breakdown = [
+      { label: 'Weekly Salary',      value: fmt(weekSalary, country) },
+      { label: 'Weeks per Year',     value: weeksPerYear + ' week(s)' },
+      { label: 'Years of Service',   value: years.toFixed(1) + ' yrs' },
+      { label: 'Estimated Total',    value: fmt(amount, country) }
+    ];
+    lawText = '<strong>US Standard Practice:</strong> No federal law requires severance pay. The most common formula is <strong>1 week of salary per year of service</strong> (some companies offer 2 weeks for senior roles). Under the WARN Act, companies with 100+ employees must give 60 days\' notice or equivalent pay for mass layoffs.';
+    subLabel = 'Standard industry estimate (1 week/year)';
+  }
+
+  // ── UK ───────────────────────────────────────────────────
+  else if (country === 'uk') {
+    if (reason === 'resigned' || reason === 'fired') {
+      eligible = false;
+      warnText = 'In the UK, Statutory Redundancy Pay only applies to genuine redundancy situations. Dismissal for misconduct or voluntary resignation typically does not qualify.';
+    }
+    if (years < 2) {
+      eligible = false;
+      warnText = 'UK Statutory Redundancy Pay requires a minimum of 2 years of continuous employment.';
+    }
+    // UK cap: £643/week in 2025
+    const ukWeekCap = 643;
+    const weekSalary = Math.min((salary * 12) / 52, ukWeekCap);
+    let totalWeeks = 0;
+    for (let y = 1; y <= Math.floor(years); y++) {
+      const currentAge = age - Math.floor(years) + y;
+      if (currentAge < 22)       totalWeeks += 0.5;
+      else if (currentAge <= 40) totalWeeks += 1;
+      else                       totalWeeks += 1.5;
+    }
+    amount = weekSalary * totalWeeks;
+    breakdown = [
+      { label: 'Capped Weekly Pay',  value: fmt(weekSalary, country) },
+      { label: 'Total Weeks Due',    value: totalWeeks.toFixed(1) + ' wks' },
+      { label: 'Years of Service',   value: years.toFixed(1) + ' yrs' },
+      { label: 'Estimated Total',    value: fmt(amount, country) }
+    ];
+    lawText = '<strong>UK Statutory Redundancy Pay:</strong> Under the Employment Rights Act 1996, employees with 2+ years of service are entitled to: <strong>½ week\'s pay</strong> for each year under age 22, <strong>1 week\'s pay</strong> for each year aged 22–40, <strong>1½ week\'s pay</strong> for each year aged 41+. Weekly pay is capped at £643 (2025).';
+    subLabel = 'Statutory Redundancy Pay estimate';
+  }
+
+  // ── UAE ──────────────────────────────────────────────────
+  else if (country === 'uae') {
+    if (reason === 'resigned' && years < 1) {
+      eligible = false;
+      warnText = 'In UAE, no gratuity is owed if you resign before completing 1 full year of service.';
+    }
+    let gratuity = 0;
+    if (years <= 5) {
+      gratuity = (salary / 30) * 21 * years;
+    } else {
+      gratuity = (salary / 30) * 21 * 5 + (salary / 30) * 30 * (years - 5);
+    }
+    // Reduction on resignation
+    let multiplier = 1;
+    if (reason === 'resigned') {
+      if (years < 3)       multiplier = 1/3;
+      else if (years < 5)  multiplier = 2/3;
+      else                 multiplier = 1;
+    }
+    amount = gratuity * multiplier;
+    const dailySalary = salary / 30;
+    breakdown = [
+      { label: 'Daily Basic Salary', value: fmt(dailySalary, country) },
+      { label: 'Gratuity Days',      value: years <= 5 ? '21 days/yr' : '21d (1-5yr) + 30d' },
+      { label: 'Service Multiplier', value: (multiplier * 100).toFixed(0) + '%' },
+      { label: 'Estimated Total',    value: fmt(amount, country) }
+    ];
+    lawText = '<strong>UAE Labour Law (Federal Decree-Law No. 33 of 2021):</strong> End-of-Service Gratuity is calculated on <strong>basic salary only</strong> (not housing/transport allowances). First 5 years: <strong>21 working days</strong> per year. Beyond 5 years: <strong>30 calendar days</strong> per year. Resignation before 3 years: 1/3 of entitlement. 3–5 years: 2/3. 5+ years: full amount.';
+    subLabel = 'UAE End-of-Service Gratuity';
+  }
+
+  // ── INDIA ────────────────────────────────────────────────
+  else if (country === 'india') {
+    if (years < 5) {
+      eligible = false;
+      warnText = 'Under the Payment of Gratuity Act, a minimum of 5 years of continuous service is required to be eligible for gratuity.';
+    }
+    // Formula: (15/26) * monthly salary * years
+    amount = (15 / 26) * salary * years;
+    // Cap at ₹20,00,000
+    const cap = 2000000;
+    if (amount > cap) amount = cap;
+    breakdown = [
+      { label: 'Monthly Salary',    value: fmt(salary, country) },
+      { label: 'Years of Service',  value: years.toFixed(1) + ' yrs' },
+      { label: 'Formula',           value: '15/26 × salary × years' },
+      { label: 'Estimated Total',   value: fmt(amount, country) }
+    ];
+    lawText = '<strong>Payment of Gratuity Act, 1972:</strong> Formula = <strong>(15 × Last Drawn Monthly Salary × Years of Service) ÷ 26</strong>. "26" represents working days in a month. Applies to companies with 10+ employees. Minimum 5 years of continuous service required. Maximum gratuity: <strong>₹20,00,000</strong>. Tax-free up to ₹20 lakhs for government employees; exempt under Section 10(10) for others.';
+    subLabel = 'Gratuity under Payment of Gratuity Act 1972';
+  }
+
+  // ── PAKISTAN ─────────────────────────────────────────────
+  else if (country === 'pakistan') {
+    if (years < 1) {
+      eligible = false;
+      warnText = 'In Pakistan, you must complete at least 1 year of continuous service to be eligible for gratuity.';
+    }
+    if (reason === 'fired') {
+      warnText = 'Gratuity may not be applicable if terminated for misconduct under Pakistan labor law. Consult an HR professional.';
+    }
+    // 30 days wages per year
+    amount = salary * Math.floor(years);
+    breakdown = [
+      { label: 'Monthly Salary',   value: fmt(salary, country) },
+      { label: 'Completed Years',  value: Math.floor(years) + ' yrs' },
+      { label: 'Formula',          value: '1 month × completed years' },
+      { label: 'Estimated Total',  value: fmt(amount, country) }
+    ];
+    lawText = '<strong>West Pakistan Industrial & Commercial Employment Ordinance 1968:</strong> Permanent workers are entitled to <strong>30 days\' wages for each completed year</strong> of continuous service as gratuity upon termination, retirement, or death. Partial years are counted proportionally in some interpretations. Provident fund contributions from employer are separate and additional.';
+    subLabel = 'Gratuity under Pakistan Labour Law';
+  }
+
+  // ── PHILIPPINES ──────────────────────────────────────────
+  else if (country === 'philippines') {
+    let daysPerYear = 0;
+    if (reason === 'layoff' || reason === 'mutual') {
+      daysPerYear = 15; // ½ month = 15 days
+      lawText = '<strong>Philippine Labor Code (Art. 298):</strong> For authorized causes (redundancy, retrenchment, closure), employees are entitled to <strong>½ month salary per year</strong> of service (minimum 1 month), or their monthly salary, whichever is higher. "½ month salary" = 15 days + 1/12 of 13th month pay + cash equivalent of 5 days SIL.';
+    } else if (reason === 'resigned') {
+      daysPerYear = 0;
+      eligible = false;
+      warnText = 'In the Philippines, voluntary resignation generally does not entitle an employee to separation pay unless stipulated in the employment contract or CBA.';
+    } else {
+      daysPerYear = 30; // 1 month
+      lawText = '<strong>Philippine Labor Code (Art. 299):</strong> If terminated due to disease or closure (not retrenchment), the employee receives <strong>1 month salary per year</strong> of service, minimum 1 month.';
+    }
+    const dailySalary = salary / 26;
+    amount = Math.max(dailySalary * daysPerYear * years, salary);
+    breakdown = [
+      { label: 'Daily Salary',     value: fmt(dailySalary, country) },
+      { label: 'Days per Year',    value: daysPerYear + ' days' },
+      { label: 'Years of Service', value: years.toFixed(1) + ' yrs' },
+      { label: 'Estimated Total',  value: fmt(amount, country) }
+    ];
+    if (!lawText) lawText = '<strong>Philippine Labor Code:</strong> Separation pay entitlement depends on the cause of termination. Authorized causes (redundancy, retrenchment) = ½ month/year. Disease/closure = 1 month/year.';
+    subLabel = 'Philippine Separation Pay estimate';
+  }
+
+  // ── SAUDI ARABIA ────────────────────────────────────────
+  else if (country === 'saudi') {
+    let amount1 = 0, amount2 = 0;
+    if (years <= 5) {
+      amount1 = (salary / 2) * years; // ½ month per year
+    } else {
+      amount1 = (salary / 2) * 5;
+      amount2 = salary * (years - 5);  // 1 month per year beyond 5
+    }
+    let multiplier = 1;
+    if (reason === 'resigned') {
+      if (years < 2)       { multiplier = 0; eligible = false; warnText = 'No end-of-service award if you resign before completing 2 years in Saudi Arabia.'; }
+      else if (years < 5)  multiplier = 1/3;
+      else if (years < 10) multiplier = 2/3;
+      else                 multiplier = 1;
+    }
+    amount = (amount1 + amount2) * multiplier;
+    breakdown = [
+      { label: 'Monthly Salary',   value: fmt(salary, country) },
+      { label: 'Years of Service', value: years.toFixed(1) + ' yrs' },
+      { label: 'Service Multiplier', value: (multiplier*100).toFixed(0)+'%' },
+      { label: 'Estimated Total',  value: fmt(amount, country) }
+    ];
+    lawText = '<strong>Saudi Labour Law (Article 84):</strong> End-of-Service Award: <strong>½ month salary per year</strong> for the first 5 years, <strong>1 month salary per year</strong> for years beyond 5. Resignation: Under 2 years = 0. 2–5 years = 1/3. 5–10 years = 2/3. 10+ years = full award. Calculated on last basic salary.';
+    subLabel = 'Saudi End-of-Service Award estimate';
+  }
+
+  // ── CANADA ──────────────────────────────────────────────
+  else if (country === 'canada') {
+    if (reason === 'resigned' || reason === 'fired') {
+      eligible = false;
+      warnText = 'In Canada, resignation and dismissal for cause typically do not qualify for severance pay. Without cause termination is required.';
+    }
+    // ESA minimum: 1 week per year, max 8 weeks. Common law: 1 month/year
+    const esaWeeks = Math.min(years, 8);
+    const weekSalary = (salary * 12) / 52;
+    const esaAmount = weekSalary * esaWeeks;
+    // Common law estimate (1 month/year, capped at 24 months)
+    const commonLawMonths = Math.min(years, 24);
+    amount = salary * commonLawMonths;
+    breakdown = [
+      { label: 'ESA Minimum',       value: fmt(esaAmount, country) },
+      { label: 'Common Law Est.',   value: fmt(amount, country) },
+      { label: 'Common Law Months', value: commonLawMonths.toFixed(0) + ' months' },
+      { label: 'Years of Service',  value: years.toFixed(1) + ' yrs' }
+    ];
+    lawText = '<strong>Canada Employment Standards Act (ESA):</strong> Minimum termination pay = <strong>1 week per year of service</strong>, capped at 8 weeks. However, common law entitlement (for wrongful dismissal) is typically <strong>1 month per year of service</strong>, up to 24 months. This calculator shows the common law estimate. Province-specific rules apply (especially Quebec). Severance pay (separate from termination pay) applies to employers with 50+ employees.';
+    subLabel = 'Common Law severance estimate (not ESA minimum)';
+  }
+
+  // ── DISPLAY ──────────────────────────────────────────────
+  const resultsEl = document.getElementById('results');
+  resultsEl.classList.add('show');
+  resultsEl.scrollIntoView({ behavior: 'smooth', block: 'start' });
+
+  document.getElementById('res-amount').textContent = eligible ? fmt(amount, country) : 'Not Eligible';
+  document.getElementById('res-sub').textContent = subLabel || 'Based on ' + COUNTRIES[country].label + ' labor law';
+
+  // Breakdown
+  const grid = document.getElementById('breakdown-grid');
+  grid.innerHTML = breakdown.map(b => `
+    <div class="bk-item">
+      <div class="bk-label">${b.label}</div>
+      <div class="bk-value">${b.value}</div>
+    </div>
+  `).join('');
+
+  document.getElementById('law-text').innerHTML = lawText;
+  const warnEl = document.getElementById('warn-text');
+  if (warnText) { warnEl.textContent = '⚠️ ' + warnText; warnEl.style.display = 'block'; }
+  else { warnEl.style.display = 'none'; }
+
+  // Re-trigger animations
+  resultsEl.querySelectorAll('.fade-up').forEach((el, i) => {
+    el.style.animation = 'none';
+    void el.offsetWidth;
+    el.style.animation = `fadeUp .4s ease ${i * 0.1}s both`;
+  });
+}
+</script>
+</body>
+</html>
