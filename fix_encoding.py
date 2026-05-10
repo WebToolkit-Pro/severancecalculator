@@ -5,21 +5,11 @@ def fix_file(path):
         content = f.read()
     
     replacements = {
-        'PAKIsTAN': 'PAKISTAN',
-        'SAudi': 'saudi',
-        'SAlary': 'Salary',
-        'United states': 'United States',
-        'Ã°Å¸â€¡ÂºÃ°Å¸â€¡Â¸': '🇺🇸',
-        'Ã°Å¸â€¡Â¬Ã°Å¸â€¡Â§': '🇬🇧',
-        'Ã°Å¸â€¡Â¦Ã°Å¸â€¡Âª': '🇦🇪',
-        'Ã°Å¸â€¡Â®Ã°Å¸â€¡Â³': '🇮🇳',
-        'Ã°Å¸â€¡ÂµÃ°Å¸â€¡Â°': '🇵🇰',
-        'Ã°Å¸â€¡ÂµÃ°Å¸â€¡Â­': '🇵🇭',
-        'Ã°Å¸â€¡Â¸Ã°Å¸â€¡Â¦': '🇸🇦',
-        'Ã°Å¸â€¡Â¨Ã°Å¸â€¡Â¦': '🇨🇦',
-        'Ã¢â‚¬â€': '—',
-        'â€º': '›',
-        's ⚡': '⚡'
+        '↗': '?',
+        '›': '�',
+        '⚡': '?',
+        '—': '�',
+        'â€�': '�'
     }
     
     for old, new in replacements.items():
@@ -28,8 +18,8 @@ def fix_file(path):
     with open(path, 'w', encoding='utf-8') as f:
         f.write(content)
 
-# Fix specific files
-fix_file('index.html')
-fix_file('blog/index.html')
-fix_file('about.html')
-fix_file('contact.html')
+# Fix all HTML files
+for root, dirs, files in os.walk('.'):
+    for file in files:
+        if file.endswith('.html'):
+            fix_file(os.path.join(root, file))
