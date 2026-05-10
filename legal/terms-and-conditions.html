@@ -42,10 +42,22 @@
     </script>
 </head>
 <body class="legal-page">
-    <nav class="navbar">
-        <a href="/" class="nav-brand">SeveranceCalculator.xyz</a>
-        <div class="nav-links"><a href="/">Calculator</a></div>
+    
+    <nav>
+        <a href="/" class="topnav-brand">
+            <i data-lucide="briefcase"></i> <span>SeveranceCalculator.xyz</span>
+        </a>
+        <div class="topnav-links" id="topnav-links">
+            <a href="/#calculator">Calculator</a>
+            <a href="/blog/index.html">Legal Guides</a>
+            <a href="/about.html">About Us</a>
+            <a href="/#calculator" class="nav-cta">Get Started</a>
+        </div>
+        <button class="menu-toggle" onclick="toggleMenu()">
+            <i data-lucide="menu"></i>
+        </button>
     </nav>
+
     <main class="container" style="margin-top: 2rem;">
         <div class="card">
             <h1>Terms & Conditions</h1>
