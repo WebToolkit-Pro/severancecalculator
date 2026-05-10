@@ -123,18 +123,19 @@ header h1 em {
 
 .topnav-links {
     display: flex;
-    gap: 20px;
+    gap: 24px;
 }
 
-.topnav-links a {
-    font-size: 14px;
-    color: var(--muted);
-    text-decoration: none;
-    font-weight: 500;
-    transition: color .2s;
+@media (max-width: 768px) {
+    .topnav { padding: 12px 16px; }
+    .topnav-links { gap: 12px; }
+    .topnav-links a { font-size: 13px; }
+    .topnav-brand span { display: none; }
 }
 
-.topnav-links a:hover { color: var(--accent); }
+@media (max-width: 480px) {
+    .topnav-links a:nth-child(n+3) { display: none; } /* Hide About/Pro Tools on tiny screens */
+}
 
 /* --- MAIN CONTAINER --- */
 main {
@@ -274,34 +275,61 @@ select:focus, input:focus {
 
 /* --- FAQ & ACCORDION --- */
 details {
-    background: #fff;
+    background: var(--surface);
     border: 1px solid var(--border);
     border-radius: var(--rsm);
-    margin-bottom: 10px;
+    margin-bottom: 12px;
+    transition: box-shadow .2s;
 }
 
+details:hover { box-shadow: var(--shadow); }
+
 summary {
-    padding: 16px 20px;
-    font-weight: 500;
+    padding: 18px 24px;
+    font-weight: 600;
     cursor: pointer;
     display: flex;
     justify-content: space-between;
     align-items: center;
+    list-style: none;
+    color: var(--accent);
 }
 
-details div { padding: 0 20px 20px; font-size: 14px; color: var(--muted); }
+summary::-webkit-details-marker { display: none; }
+
+summary::after {
+    content: '+';
+    font-family: serif;
+    font-size: 20px;
+    color: var(--accent-gold);
+}
+
+details[open] summary::after { content: '−'; }
+
+details div { 
+    padding: 0 24px 24px; 
+    font-size: 15px; 
+    color: var(--muted); 
+    line-height: 1.7;
+}
 
 /* --- AD HIDING --- */
 .ad-slot {
-    display: none; /* Hidden by default */
+    display: none;
+    height: 0;
+    overflow: hidden;
+    margin: 0;
+}
+
+.ad-slot.reveal { 
+    display: block; 
+    height: auto;
     background: #fff;
     border: 1px dashed #ddd;
     border-radius: var(--rsm);
     padding: 20px;
-    margin: 20px 0;
+    margin: 24px 0;
 }
-
-.ad-slot.reveal { display: block; }
 
 @keyframes fadeUp {
     from { opacity: 0; transform: translateY(20px); }

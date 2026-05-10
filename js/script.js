@@ -32,10 +32,10 @@ function fmt(n, country) {
 }
 
 function toggleNavLinks() {
-    const isCalcPage = document.getElementById('calculator') !== null;
+    const isCalcPage = document.getElementById('severance-pay-calculator-2025') !== null;
     const calcLink = document.getElementById('nav-calc-link');
     if (calcLink && isCalcPage) {
-        calcLink.style.display = 'none'; // Hide if already on calculator page
+        // calcLink.style.display = 'none'; // Re-enable if you want it hidden on home
     }
 }
 
@@ -180,7 +180,14 @@ function calculate() {
     
     document.getElementById('res-amount').textContent = eligible ? fmt(amount, country) : 'Not Eligible';
     document.getElementById('res-sub').textContent = sub;
-    document.getElementById('lawtext').innerHTML = law;
+    document.getElementById('lawtext').innerHTML = `
+        <p>${law}</p>
+        <div style="margin-top: 15px; padding-top: 15px; border-top: 1px solid #eee;">
+            <strong>Why this amount?</strong> Based on your ${years.toFixed(1)} years of service and local labor regulations, 
+            you are entitled to the breakdown shown above. 
+            ${eligible ? 'This estimate assumes a "without-cause" termination.' : 'Note the warnings above regarding eligibility.'}
+        </div>
+    `;
     
     const warnEl = document.getElementById('warn-text');
     if (warn) { warnEl.innerHTML = '⚠️ ' + warn; warnEl.style.display = 'block'; } else { warnEl.style.display = 'none'; }
