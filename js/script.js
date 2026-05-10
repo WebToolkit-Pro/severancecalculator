@@ -21,9 +21,13 @@ document.addEventListener('DOMContentLoaded', () => {
 });
 
 function updateCurrency() {
-    const country = document.getElementById('country').value;
-    const sym = CountryConfig[country].sym;
-    document.querySelectorAll('.curr-sym').forEach(el => el.textContent = sym);
+    const countryEl = document.getElementById('country');
+    if (!countryEl) return;
+    const country = countryEl.value.toLowerCase();
+    const config = CountryConfig[country];
+    if (config) {
+        document.querySelectorAll('.curr-sym').forEach(el => el.textContent = config.sym);
+    }
 }
 
 function toggleMenu() {
@@ -32,7 +36,8 @@ function toggleMenu() {
 }
 
 function fmt(n, country) {
-    const s = CountryConfig[country].sym;
+    const key = country.toLowerCase();
+    const s = CountryConfig[key] ? CountryConfig[key].sym : '$';
     return s + Math.round(n).toLocaleString();
 }
 
