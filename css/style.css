@@ -1,23 +1,20 @@
-@import url('https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800&display=swap');
+﻿@import url('https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800&display=swap');
 
 :root {
-  --bg: #F8FAFC;
-  --surface: #FFFFFF;
     --primary: #004d40;
     --accent: #2e7d32;
     --accent-light: #e8f5e9;
-    --text: #263238;
-    --muted: #546e7a;
-    --bg: #f8faf9;
+    --text: #1a202c;
+    --muted: #4a5568;
+    --bg: #f7fafc;
     --card-bg: #ffffff;
-    --border: #eceff1;
-    --shadow: 0 4px 20px rgba(0,0,0,0.06);
+    --border: #e2e8f0;
+    --shadow: 0 10px 15px -3px rgba(0, 0, 0, 0.1);
     --radius: 12px;
     
-    /* Fluid Font Sizes */
-    --fs-h1: clamp(2rem, 5vw + 1rem, 3.5rem);
-    --fs-h2: clamp(1.5rem, 3vw + 1rem, 2.25rem);
-    --fs-body: clamp(1rem, 0.5vw + 0.9rem, 1.1rem);
+    --fs-h1: clamp(2.25rem, 4vw + 1rem, 3.5rem);
+    --fs-h2: clamp(1.5rem, 2vw + 1rem, 2rem);
+    --fs-body: 1.05rem;
 }
 
 * { box-sizing: border-box; margin: 0; padding: 0; }
@@ -340,7 +337,7 @@ summary::after {
     color: var(--accent-gold);
 }
 
-details[open] summary::after { content: '−'; }
+details[open] summary::after { content: 'âˆ’'; }
 
 details div { 
     padding: 0 24px 24px; 
@@ -424,3 +421,4 @@ footer a:hover {
     margin-top: 60px;
     border-top: 1px solid rgba(255,255,255,0.05);
 }
+
