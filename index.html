@@ -1,4 +1,4 @@
-﻿<!DOCTYPE html>
+<!DOCTYPE html>
 <html lang="en">
 <head>
     <meta charset="UTF-8">
@@ -153,14 +153,15 @@
             <ins class="adsbygoogle"
                  style="display:block"
                  data-ad-client="ca-pub-4234692080899883"
-                 data-ad-slot="1234567890" 
+                 data-ad-slot="YOUR_AD_SLOT_1" 
                  data-ad-format="auto"
                  data-full-width-responsive="true"></ins>
             <script>
-                // Only push if ID is not a placeholder
                 (function() {
                     var ins = document.currentScript.previousElementSibling;
-                    if (ins && ins.getAttribute('data-ad-slot') !== 'YOUR_AD_SLOT_1') {
+                    var slot = ins ? ins.getAttribute('data-ad-slot') : '';
+                    // Only push if the slot is a real number (not a placeholder)
+                    if (/^\d+$/.test(slot)) {
                         (adsbygoogle = window.adsbygoogle || []).push({});
                     }
                 })();
@@ -171,7 +172,7 @@
         <SECTION id="RESULTS" class="RESULTS-area">
             <div class="result-hero">
                 <div style="font-size: 12px; text-transform: uppercase; letter-spacing: .1em; opacity: .7;">Your Estimated Severance Pay</div>
-                <div class="amount" id="res-amount">â€”Â</div>
+                <div class="amount" id="res-amount">â€”Â </div>
                 <div id="res-sub" style="font-size: 14px; opacity: .6;">Based on local labor law</div>
             </div>
 
@@ -184,15 +185,22 @@
             </div>
         </SECTION>
         <!-- AD SLOT (Bottom) -->
-        <div class="ad-slot adsbygoogle-container">
+        <div class="ad-slot adsbygoogle-container" style="margin-top: 40px;">
             <ins class="adsbygoogle"
                  style="display:block"
                  data-ad-client="ca-pub-4234692080899883"
-                 data-ad-slot="YOUR_AD_sLOT_2"
+                 data-ad-slot="YOUR_AD_SLOT_2"
                  data-ad-format="auto"
-                 data-full-width-responsive="true"
-                 data-ad-status="unfilled"></ins>
-            <script>(adsbygoogle = window.adsbygoogle || []).push({});</script>
+                 data-full-width-responsive="true"></ins>
+            <script>
+                (function() {
+                    var ins = document.currentScript.previousElementSibling;
+                    var slot = ins ? ins.getAttribute('data-ad-slot') : '';
+                    if (/^\d+$/.test(slot)) {
+                        (adsbygoogle = window.adsbygoogle || []).push({});
+                    }
+                })();
+            </script>
         </div>
 <!-- FAQ SECTION -->
         <SECTION id="gratuity-calculation-faq" style="margin-top: 40px;">
