@@ -30,14 +30,4 @@ A professional, high-performance web application for calculating severance pay a
 This project is part of the **WebToolkit Pro** ecosystem. For more developer and professional tools, visit:
 👉 **[WebToolkit Pro (wtkpro.site)](https://wtkpro.site)**
 
-## 📈 GitHub Repository Settings
-
-To optimize your repository's visibility, use the following settings:
-
-- **About:** Professional Severance Pay & Gratuity Calculator 2025. Supports USA, UK, UAE, India, Pakistan, Philippines, Saudi Arabia & Canada. Premium SEO & UI.
-- **Website:** https://www.severancecalculator.xyz
-- **Topics:** `severance-calculator`, `gratuity-calculator`, `finance-tool`, `seo-optimized`, `uae-labour-law`, `redundancy-pay`, `webtoolkit-pro`
-
----
-
 © 2025 SeveranceCalculator.xyz - A project by [WebToolkit Pro](https://wtkpro.site).
