@@ -97,39 +97,75 @@ header h1 em {
 .topnav {
     background: #fff;
     border-bottom: 1px solid var(--border);
-    padding: 12px 24px;
+    padding: 0 24px;
+    height: 64px;
     display: flex;
     justify-content: space-between;
     align-items: center;
     position: sticky;
     top: 0;
-    z-index: 1000;
+    z-index: 2000;
 }
 
 .topnav-brand {
-    font-weight: 600;
-    font-size: 15px;
+    font-weight: 700;
+    font-size: 18px;
     color: var(--accent);
     text-decoration: none;
     display: flex;
     align-items: center;
     gap: 8px;
+    white-space: nowrap;
 }
 
 .topnav-links {
     display: flex;
-    gap: 24px;
+    gap: 32px;
+    align-items: center;
 }
 
-@media (max-width: 768px) {
-    .topnav { padding: 12px 16px; }
-    .topnav-links { gap: 12px; }
-    .topnav-links a { font-size: 13px; }
-    .topnav-brand span { display: none; }
+.topnav-links a {
+    font-size: 14px;
+    color: var(--muted);
+    text-decoration: none;
+    font-weight: 600;
+    transition: color .2s;
+    white-space: nowrap; /* Prevents text wrap within links */
 }
 
-@media (max-width: 480px) {
-    .topnav-links a:nth-child(n+3) { display: none; } /* Hide About/Pro Tools on tiny screens */
+.topnav-links a:hover { color: var(--accent); }
+
+/* --- MOBILE MENU (HAMBURGER) --- */
+.menu-toggle {
+    display: none;
+    cursor: pointer;
+    background: none;
+    border: none;
+    color: var(--accent);
+    padding: 8px;
+}
+
+@media (max-width: 820px) {
+    .topnav-brand { font-size: 15px; }
+    .topnav-links {
+        display: none; /* Hidden by default on mobile */
+        position: absolute;
+        top: 64px;
+        left: 0;
+        width: 100%;
+        background: #fff;
+        flex-direction: column;
+        padding: 20px;
+        gap: 15px;
+        border-bottom: 1px solid var(--border);
+        box-shadow: 0 10px 15px -3px rgba(0,0,0,0.1);
+    }
+    .topnav-links.active { display: flex; }
+    .menu-toggle { display: block; }
+}
+
+@media (max-width: 380px) {
+    .topnav-brand span { display: none; } /* Show only icon on very small screens */
 }
 
 /* --- MAIN CONTAINER --- */

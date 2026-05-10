@@ -26,6 +26,11 @@ function updateCurrency() {
     document.querySelectorAll('.curr-sym').forEach(el => el.textContent = sym);
 }
 
+function toggleMenu() {
+    const links = document.getElementById('topnav-links');
+    links.classList.toggle('active');
+}
+
 function fmt(n, country) {
     const s = CountryConfig[country].sym;
     return s + Math.round(n).toLocaleString();
