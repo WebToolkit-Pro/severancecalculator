@@ -1,13 +1,22 @@
 RewriteEngine On
+RewriteBase /
 
-# 1. Redirect .html requests to clean URLs
+# 1. Force trailing slash on directories
+RewriteCond %{REQUEST_FILENAME} -d
+RewriteRule ^(.*?[^/])$ %{REQUEST_URI}/ [L,R=301]
+
+# 2. Redirect .html requests to clean URLs
 RewriteCond %{THE_REQUEST} ^[A-Z]{3,9}\ /.*\.html\ HTTP/
 RewriteRule ^(.*)\.html$ /$1 [R=301,L]
 
-# 2. Handle requests without extension
+# 3. Handle requests without extension
 RewriteCond %{REQUEST_FILENAME} !-d
 RewriteCond %{REQUEST_FILENAME}\.html -f
 RewriteRule ^(.*)$ $1.html [NC,L]
 
-# 3. Custom Error Pages (Optional but recommended)
+# 4. Special handling for favicon (fallback to png if missing)
+RewriteCond %{REQUEST_FILENAME} !-f
+RewriteRule ^favicon\.ico$ assets/favicon.png [L]
+
+# 5. Custom Error Pages
 ErrorDocument 404 /404.html
