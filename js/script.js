@@ -49,6 +49,18 @@ function updateCurrency() {
     const config = CountryConfig[country];
     if (config) {
         document.querySelectorAll('.curr-sym').forEach(el => el.textContent = config.sym);
+        
+        // Update Age Hint dynamically
+        const ageHint = document.getElementById('age-hint');
+        if (ageHint) {
+            if (country === 'uk') {
+                ageHint.textContent = 'Required for UK Statutory Redundancy';
+            } else if (country === 'uae' || country === 'saudi' || country === 'qatar') {
+                ageHint.textContent = 'Required for gratuity verification';
+            } else {
+                ageHint.textContent = 'Recommended for accurate legal estimation';
+            }
+        }
     }
 }
 
@@ -71,7 +83,7 @@ function toggleNavLinks() {
 }
 
 function calculate() {
-    const country = document.getElementById('country').value;
+    const country = document.getElementById('country').value.toLowerCase();
     const salary = parseFloat(document.getElementById('salary').value) || 0;
     const years = parseFloat(document.getElementById('years').value) || 0;
     const age = parseInt(document.getElementById('age').value) || 35;
@@ -268,6 +280,11 @@ function calculate() {
         amount = salary * years;
         law = '<strong>Argentina Labor Law:</strong> 1 month of salary per year of service.';
         sub = 'Argentina Severance Estimate';
+    } else {
+        // Fallback for any missed countries
+        amount = salary * years;
+        law = '<strong>Standard Statutory Estimate:</strong> Based on general labor law principles of one month per year.';
+        sub = 'General Statutory Estimate';
     }
 
     // --- DISPLAY RESULTS ---
@@ -276,25 +293,43 @@ function calculate() {
     
     document.getElementById('res-amount').textContent = eligible ? fmt(amount, country) : 'Not Eligible';
     document.getElementById('res-sub').textContent = sub;
+    
+    // Explicitly update law text and Why This Amount
+    const countryName = CountryConfig[country] ? CountryConfig[country].flag + ' ' + country.toUpperCase() : 'Selected Country';
     document.getElementById('lawtext').innerHTML = `
-        <p>${law}</p>
-        <div style="margin-top: 15px; padding-top: 15px; border-top: 1px solid #eee;">
-            <strong>Why this amount?</strong> Based on your ${years.toFixed(1)} years of service and local labor regulations, 
-            you are entitled to the breakdown shown above. 
+        <div style="margin-bottom: 10px;">${law}</div>
+        <div style="margin-top: 15px; padding-top: 15px; border-top: 1px solid rgba(255,255,255,0.1);">
+            <strong style="color: var(--primary);">Why this amount?</strong> Based on ${years.toFixed(1)} years of service in ${countryName}, 
+            you are entitled to the legal benefits shown above. 
             ${eligible ? 'This estimate assumes a "without-cause" termination.' : 'Note the warnings above regarding eligibility.'}
         </div>
     `;
     
     const warnEl = document.getElementById('warn-text');
-    if (warn) { warnEl.innerHTML = '⚠️ ' + warn; warnEl.style.display = 'block'; } else { warnEl.style.display = 'none'; }
+    if (warn) { 
+        warnEl.innerHTML = '⚠️ ' + warn; 
+        warnEl.style.display = 'block'; 
+        warnEl.style.background = 'rgba(251, 191, 36, 0.1)';
+        warnEl.style.color = '#fbbf24';
+        warnEl.style.border = '1px solid rgba(251, 191, 36, 0.2)';
+    } else { 
+        warnEl.style.display = 'none'; 
+    }
 
-    // Populate Breakdown Grid
-    document.getElementById('bkgrid').innerHTML = breakdown.map(b => `
-        <div class="bki">
-            <div class="bkl">${b.l}</div>
-            <div class="bkv">${b.v}</div>
-        </div>
-    `).join('');
+    // Populate Breakdown Grid (Clear if empty)
+    const gridEl = document.getElementById('bkgrid');
+    if (breakdown.length > 0) {
+        gridEl.style.display = 'grid';
+        gridEl.innerHTML = breakdown.map(b => `
+            <div class="bki">
+                <div class="bkl">${b.l}</div>
+                <div class="bkv">${b.v}</div>
+            </div>
+        `).join('');
+    } else {
+        gridEl.style.display = 'none';
+        gridEl.innerHTML = '';
+    }
 
     resDiv.scrollIntoView({ behavior: 'smooth', block: 'start' });
 }
