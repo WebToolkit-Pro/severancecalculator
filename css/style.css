@@ -398,6 +398,85 @@ footer a:hover { color: white; }
     line-height: 1.6;
 }
 
+/* --- BLOG & CONTENT STYLES --- */
+.header-desc {
+    color: var(--muted);
+    max-width: 700px;
+    margin: 24px auto 32px;
+    font-size: 18px;
+    line-height: 1.6;
+}
+
+.breadcrumb {
+    display: flex;
+    justify-content: center;
+    gap: 8px;
+    font-size: 13px;
+    color: rgba(255,255,255,0.5);
+    font-weight: 500;
+}
+
+.breadcrumb a {
+    color: white;
+    text-decoration: none;
+    opacity: 0.8;
+    transition: opacity 0.2s;
+}
+
+.breadcrumb a:hover {
+    opacity: 1;
+}
+
+.breadcrumb span {
+    opacity: 0.4;
+}
+
+/* --- FAQ / DETAILS STYLES --- */
+.faq-item {
+    background: #0f172a;
+    border: 1px solid var(--border);
+    border-radius: 12px;
+    margin-bottom: 16px;
+    transition: all 0.3s ease;
+}
+
+.faq-item[open] {
+    border-color: var(--primary);
+    background: rgba(16, 185, 129, 0.02);
+}
+
+.faq-item summary {
+    padding: 20px 24px;
+    font-weight: 600;
+    font-size: 16px;
+    cursor: pointer;
+    list-style: none;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    color: white;
+}
+
+.faq-item summary::after {
+    content: '+';
+    font-family: 'Outfit', sans-serif;
+    font-size: 20px;
+    color: var(--primary);
+    transition: transform 0.3s ease;
+}
+
+.faq-item[open] summary::after {
+    content: '−';
+    transform: rotate(180deg);
+}
+
+.faq-content {
+    padding: 0 24px 24px;
+    color: var(--muted);
+    line-height: 1.7;
+    font-size: 15px;
+}
+
 /* Mobile Fixes */
 @media (max-width: 768px) {
     .menu-toggle {
