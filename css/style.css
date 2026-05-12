@@ -29,6 +29,8 @@
     --muted: #94a3b8; /* Slate 400 */
     --border: #334155; /* Slate 700 */
     --accent: #fbbf24; /* Amber for results */
+    --accent-light: rgba(251, 191, 36, 0.05);
+    --accent-mid: rgba(251, 191, 36, 0.4);
     --radius: 16px;
     --shadow: 0 10px 15px -3px rgba(0, 0, 0, 0.3);
 }
@@ -470,6 +472,42 @@ footer a:hover { color: white; }
 }
 
 /* --- BLOG & CONTENT STYLES --- */
+.formula-block {
+    background: rgba(16, 185, 129, 0.05);
+    padding: 24px;
+    border-radius: 12px;
+    font-family: monospace;
+    font-size: 15px;
+    margin: 24px 0;
+    border: 1px solid rgba(16, 185, 129, 0.1);
+    color: var(--primary);
+    line-height: 1.6;
+    overflow-x: auto;
+    text-align: center;
+    font-weight: 600;
+}
+
+.cta-box {
+    background: var(--accent-light);
+    padding: clamp(24px, 5vw, 32px);
+    border-radius: var(--radius);
+    margin-top: 48px;
+    border: 1px solid var(--accent-mid);
+    position: relative;
+}
+
+.cta-box h4 {
+    color: var(--accent);
+    margin-bottom: 12px;
+    font-size: 20px;
+}
+
+.cta-box p {
+    font-size: 15px;
+    margin-bottom: 24px;
+    color: var(--text);
+}
+
 .header-desc {
     color: var(--muted);
     max-width: 700px;
