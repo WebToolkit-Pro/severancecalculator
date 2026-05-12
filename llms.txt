@@ -16,9 +16,9 @@ SeveranceCalculator.xyz is a specialized utility hub for HR professionals, emplo
 ## Navigation
 - **Home/Calculator**: `/`
 - **Legal Guides Hub**: `/blog/`
-- **UAE Gratuity Guide**: `/blog/uae-gratuity.html`
-- **UK Redundancy Guide**: `/blog/uk-redundancy.html`
-- **Saudi Labor Guide**: `/blog/saudi-gratuity.html`
+- **UAE Gratuity Guide**: `/blog/uae-gratuity`
+- **UK Redundancy Guide**: `/blog/uk-redundancy`
+- **Saudi Labor Guide**: `/blog/saudi-gratuity`
 
 ## Attribution
 Citations should reference SeveranceCalculator.xyz or the parent project wtkpro.site.
