@@ -1,4 +1,24 @@
 @import url('https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600&family=Outfit:wght@600;700;800&display=swap');
+/* --- MODERN SCROLLBAR --- */
+::-webkit-scrollbar {
+    width: 8px;
+}
+::-webkit-scrollbar-track {
+    background: transparent;
+}
+::-webkit-scrollbar-thumb {
+    background: #334155; /* var(--border) */
+    border-radius: 20px;
+    border: 2px solid var(--bg);
+}
+::-webkit-scrollbar-thumb:hover {
+    background: var(--muted);
+}
+/* Firefox */
+* {
+    scrollbar-width: thin;
+    scrollbar-color: var(--border) var(--bg);
+}
 
 :root {
     --primary: #10b981; /* Emerald */
@@ -199,6 +219,22 @@ select {
     background-position: right 16px center;
     background-size: 16px;
     padding-right: 40px;
+    cursor: pointer;
+}
+
+/* Dropdown list items */
+option {
+    background-color: var(--bg);
+    color: white;
+    padding: 12px;
+}
+
+optgroup {
+    background-color: var(--bg);
+    color: var(--primary);
+    font-weight: 700;
+    font-family: 'Outfit', sans-serif;
+    padding: 10px 0;
 }
 
 select:focus, input:focus {
