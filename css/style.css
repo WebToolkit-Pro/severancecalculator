@@ -44,7 +44,24 @@ body {
     background-color: var(--bg);
     color: var(--text);
     line-height: 1.6;
+    font-size: clamp(0.95rem, 0.2vw + 0.9rem, 1.05rem);
     -webkit-font-smoothing: antialiased;
+}
+
+h1 {
+    font-size: clamp(2.25rem, 5vw + 1rem, 3.75rem);
+    line-height: 1.1;
+    letter-spacing: -0.02em;
+}
+
+h2 {
+    font-size: clamp(1.75rem, 4vw + 1rem, 2.75rem);
+    line-height: 1.2;
+    letter-spacing: -0.01em;
+}
+
+h3 {
+    font-size: clamp(1.25rem, 2vw + 1rem, 1.75rem);
 }
 
 h1, h2, h3, h4 {
@@ -531,7 +548,7 @@ footer a:hover { color: white; }
     font-size: 15px;
 }
 
-/* Mobile Fixes */
+/* --- MODERN RESPONSIVE ENGINE --- */
 @media (max-width: 768px) {
     .menu-toggle {
         display: block;
@@ -539,16 +556,18 @@ footer a:hover { color: white; }
 
     .topnav-links {
         display: none;
-        position: absolute;
+        position: fixed; /* Better than absolute for mobile overlay */
         top: 0;
         left: 0;
         width: 100%;
+        height: 100vh;
         background: rgba(15, 23, 42, 0.98);
-        backdrop-filter: blur(20px);
+        backdrop-filter: blur(24px);
+        -webkit-backdrop-filter: blur(24px);
         flex-direction: column;
-        padding: 100px 24px 40px;
-        border-bottom: 1px solid var(--border);
-        box-shadow: 0 20px 40px rgba(0,0,0,0.5);
+        justify-content: center;
+        padding: 40px;
+        z-index: 999;
     }
 
     .topnav-links.active {
@@ -556,28 +575,39 @@ footer a:hover { color: white; }
     }
 
     .topnav-links a {
-        font-size: 18px;
+        font-size: 24px;
+        padding: 20px 0;
+        border-bottom: 1px solid rgba(255,255,255,0.05);
         width: 100%;
         text-align: center;
-        padding: 15px 0;
     }
 
-    .nav-cta {
-        margin-top: 10px;
-        border-radius: 12px;
+    header {
+        padding: 80px 20px 60px;
     }
 
-    header h1 { font-size: 32px; }
-    header p { font-size: 15px; }
-    .card { padding: 24px; }
-    .result-hero .amount { font-size: 40px; }
-    
+    header p {
+        font-size: clamp(1rem, 2vw + 0.5rem, 1.2rem);
+    }
+
+    .card {
+        padding: clamp(20px, 5vw, 32px);
+    }
+
     .guides-grid {
         grid-template-columns: 1fr;
+        gap: 16px;
+    }
+
+    .result-hero .amount {
+        font-size: clamp(2.5rem, 8vw, 4rem);
     }
 }
 
-@media (max-width: 480px) {
-    header h1 { font-size: 28px; }
-    .result-hero .amount { font-size: 32px; }
+@media (hover: hover) {
+    .guide-card:hover {
+        transform: translateY(-8px);
+        border-color: var(--primary);
+        box-shadow: 0 20px 25px -5px rgba(0, 0, 0, 0.5);
+    }
 }

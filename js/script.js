@@ -80,7 +80,23 @@ function updateCurrency() {
 function toggleMenu() {
     const links = document.getElementById('topnav-links');
     links.classList.toggle('active');
+    
+    // Prevent scrolling when menu is open
+    if (links.classList.contains('active')) {
+        document.body.style.overflow = 'hidden';
+    } else {
+        document.body.style.overflow = '';
+    }
 }
+
+// Auto-close menu on link click
+document.addEventListener('click', (e) => {
+    if (e.target.closest('#topnav-links a')) {
+        const links = document.getElementById('topnav-links');
+        links.classList.remove('active');
+        document.body.style.overflow = '';
+    }
+});
 
 function fmt(n, country) {
     const s = CountryConfig[country].sym;
