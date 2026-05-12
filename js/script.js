@@ -37,6 +37,19 @@ const CountryConfig = {
 };
 
 document.addEventListener('DOMContentLoaded', () => {
+    // Pre-select country from URL parameter
+    const urlParams = new URLSearchParams(window.location.search);
+    const countryParam = urlParams.get('country');
+    const countryEl = document.getElementById('country');
+    
+    if (countryParam && countryEl) {
+        // Try to match the parameter to an option value
+        const option = Array.from(countryEl.options).find(opt => opt.value.toLowerCase() === countryParam.toLowerCase());
+        if (option) {
+            countryEl.value = option.value;
+        }
+    }
+
     updateCurrency();
     initAdDetection();
     toggleNavLinks();
