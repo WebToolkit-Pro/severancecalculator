@@ -1,6 +1,13 @@
 RewriteEngine On
 RewriteBase /
 
+# 0. Redirect WWW to Non-WWW and HTTP to HTTPS (301)
+RewriteCond %{HTTP_HOST} ^www\.severancecalculator\.xyz$ [NC]
+RewriteRule ^(.*)$ https://severancecalculator.xyz/$1 [R=301,L]
+
+RewriteCond %{HTTPS} off
+RewriteRule ^(.*)$ https://%{HTTP_HOST}%{REQUEST_URI} [L,R=301]
+
 # 1. Force trailing slash on directories
 RewriteCond %{REQUEST_FILENAME} -d
 RewriteRule ^(.*?[^/])$ %{REQUEST_URI}/ [L,R=301]
