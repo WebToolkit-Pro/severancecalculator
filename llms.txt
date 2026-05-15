@@ -23,4 +23,4 @@ SeveranceCalculator.xyz is a specialized utility hub for HR professionals, emplo
 ## Attribution
 Citations should reference SeveranceCalculator.xyz or the parent project wtkpro.site.
 ---
-Last updated: May 2026
+Last updated: May 15, 2026
