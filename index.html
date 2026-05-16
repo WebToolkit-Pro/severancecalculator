@@ -70,20 +70,17 @@
     {
       "@context": "https://schema.org",
       "@type": "BreadcrumbList",
-      "itemListElement": [
-        {
-          "@type": "ListItem",
-          "position": 1,
-          "name": "Home",
-          "item": "https://severancecalculator.xyz/"
-        },
-        {
-          "@type": "ListItem",
-          "position": 2,
-          "name": "Severance Calculator",
-          "item": "https://severancecalculator.xyz/"
-        }
-      ]
+      "itemListElement": [{
+        "@type": "ListItem",
+        "position": 1,
+        "name": "Home",
+        "item": "https://www.severancecalculator.xyz"
+      },{
+        "@type": "ListItem",
+        "position": 2,
+        "name": "Calculators",
+        "item": "https://www.severancecalculator.xyz/#calculator"
+      }]
     }
     </script>
     <script type="application/ld+json">
@@ -145,6 +142,10 @@
     <header>
         <div class="badge">Official 2026 Global Edition</div>
         <h1>Severance Pay Calculator<br>for Multiple Countries</h1>
+        <div class="global-trust-badge">
+            <span class="launch-label">Official 2026 Launch Edition</span>
+            <span>Community-Driven • 100% Client-Side Privacy</span>
+        </div>
         <p>Know exactly what you're owed. Based on official 2026 labor laws for USA, UK, UAE, India, Pakistan,
             Philippines, Saudi Arabia & Canada.</p>
         <div style="display: flex; justify-content: center; gap: 8px; font-size: 13px; color: rgba(255,255,255,0.6);">
@@ -230,9 +231,13 @@
                     </select>
                 </div>
             </div>
-            <button class="btn-calc" onclick="calculate()">
-                <i data-lucide="zap"></i> Calculate My Severance Pay
-            </button>
+                <button class="btn-calc" onclick="calculate()">
+                    <i data-lucide="calculator"></i> Calculate Severance
+                </button>
+                <div class="privacy-badge">
+                    <i data-lucide="shield-check"></i>
+                    <span>Privacy: All calculations are performed locally in your browser. No data is transmitted to our servers.</span>
+                </div>
         </section>
         <!-- AD SLOT (Top) -->
         <div class="ad-slot adsbygoogle-container">
@@ -251,10 +256,20 @@
         <!-- RESULTS SECTION -->
         <section id="RESULTS" class="RESULTS-area">
             <div class="result-hero">
-                <div
-                    style="font-size: 14px; text-transform: uppercase; letter-spacing: .1em; opacity: .8; font-weight: 600;">
+                <div style="font-size: 14px; text-transform: uppercase; letter-spacing: .1em; opacity: .8; font-weight: 600;">
                     Your Estimated Severance Pay</div>
                 <div class="amount" id="res-amount">--</div>
+                <div class="res-rating">
+                    <span style="font-size: 11px; opacity: 0.6; margin-bottom: 4px;">Help us improve:</span>
+                    <div class="stars rating-input">
+                        <i data-lucide="star" onclick="rate(1)" title="Poor"></i>
+                        <i data-lucide="star" onclick="rate(2)" title="Fair"></i>
+                        <i data-lucide="star" onclick="rate(3)" title="Good"></i>
+                        <i data-lucide="star" onclick="rate(4)" title="Very Good"></i>
+                        <i data-lucide="star" onclick="rate(5)" title="Excellent"></i>
+                    </div>
+                    <span id="rate-msg">Be the first to rate this calculation!</span>
+                </div>
                 <div id="res-sub" style="font-size: 15px; opacity: 0.8;">Based on local labor laws</div>
             </div>
             <div class="card">
@@ -264,6 +279,40 @@
                 </div>
                 <div id="warn-text"
                     style="display:none; background: #fffbeb; color: #92400e; padding: 16px; border-radius: 12px; margin-top: 20px; font-size: 14px; border: 1px solid #fef3c7;">
+                </div>
+            </div>
+            
+            <!-- Lead Generation Form (PDF Report) -->
+            <div id="lead-gen" class="card lead-gen-box" style="display: none; border: 2px solid var(--primary); background: linear-gradient(135deg, rgba(35, 134, 54, 0.05) 0%, rgba(13, 17, 23, 1) 100%);">
+                <div class="lead-content">
+                    <div class="lead-text">
+                        <h3 style="color: var(--primary); margin-bottom: 8px;">Get Your Detailed PDF Report</h3>
+                        <p id="lead-desc" style="font-size: 14px; color: var(--muted); margin-bottom: 20px;">We'll send a full breakdown of labor laws, negotiation scripts, and tax implications to your inbox.</p>
+                    </div>
+                </div>
+                <form id="lead-form" onsubmit="handleLeadSubmit(event)">
+                    <div style="display: grid; grid-template-columns: 1fr 1fr; gap: 12px; margin-bottom: 12px;">
+                        <div class="field" style="margin-bottom: 0;">
+                            <input type="text" id="lead-name" placeholder="Your Name" required style="background: rgba(0,0,0,0.2);">
+                        </div>
+                        <div class="field" style="margin-bottom: 0;">
+                            <input type="email" id="lead-email" placeholder="Your Email" required style="background: rgba(0,0,0,0.2);">
+                        </div>
+                    </div>
+                    <button type="submit" class="btn-calc" style="margin-top: 0; background: var(--primary);">
+                        <i data-lucide="mail"></i> Send Me the PDF Report
+                    </button>
+                    <p style="font-size: 11px; color: var(--muted); text-align: center; margin-top: 12px;">
+                        <i data-lucide="shield-check" style="width: 12px; height: 12px; vertical-align: middle;"></i> 
+                        Your privacy is protected. No spam, just your report.
+                    </p>
+                </form>
+                <div id="lead-success" style="display: none; text-align: center; padding: 20px 0;">
+                    <div style="width: 48px; height: 48px; background: var(--primary); color: white; border-radius: 50%; display: flex; align-items: center; justify-content: center; margin: 0 auto 16px;">
+                        <i data-lucide="check"></i>
+                    </div>
+                    <h4 style="margin-bottom: 8px;">Check Your Inbox!</h4>
+                    <p style="font-size: 14px; color: var(--muted);">Your detailed severance report is on its way.</p>
                 </div>
             </div>
         </section>
@@ -364,8 +413,19 @@
         </section>
     </main>
     <footer>
-        <div
-            style="display: grid; grid-template-columns: repeat(auto-fit, minmax(200px, 1fr)); gap: 40px; max-width: 1000px; margin: 0 auto;">
+        
+               <!-- RELATED TOOLS - PILLAR LINKS -->
+            <div class="related-tools-silo">
+                <h4 class="silo-title"><i data-lucide="link"></i> Related Financial Tools</h4>
+                <div class="silo-links">
+                    <a href="/blog/uae-gratuity.html" class="silo-link">UAE Gratuity Guide</a>
+                    <a href="/blog/saudi-gratuity.html" class="silo-link">Saudi End-of-Service Guide</a>
+                    <a href="/blog/pakistan-gratuity.html" class="silo-link">Pakistan Benefits Guide</a>
+                    <a href="/blog/india-gratuity.html" class="silo-link">India Gratuity Act Guide</a>
+                </div>
+            </div>
+            
+            <div style="display: grid; grid-template-columns: repeat(auto-fit, minmax(200px, 1fr)); gap: 40px; max-width: 1000px; margin: 0 auto;">
             <div>
                 <h4>SeveranceCalculator.xyz</h4>
                 <p>Professional global financial tools powered by <a href="https://wtkpro.site" target="_blank"

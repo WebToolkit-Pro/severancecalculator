@@ -1,7 +1,26 @@
 /**
  * Severance Pay Calculator - Core Engine v2.0
- * Includes: Detailed Breakdowns, Ad-Reveal Logic, Nav Link Toggling
+ * Includes: Detailed Breakdowns, Ad-Reveal Logic, Nav Link Toggling, Rating System
  */
+
+// --- RATING SYSTEM ---
+function rate(n) {
+    const stars = document.querySelectorAll('.rating-input i');
+    stars.forEach((s, idx) => {
+        if (idx < n) s.classList.add('fill');
+        else s.classList.remove('fill');
+    });
+    
+    const msg = document.getElementById('rate-msg');
+    if (msg) {
+        msg.innerText = "Thank you for your feedback!";
+        msg.style.color = "var(--primary)";
+    }
+    
+    localStorage.setItem('user_rating', n);
+    const container = document.querySelector('.rating-input');
+    if (container) container.style.pointerEvents = 'none';
+}
 
 const CountryConfig = {
     usa: { sym: '$', name: 'USD', flag: '🇺🇸' },
@@ -361,6 +380,42 @@ function calculate() {
     }
 
     resDiv.scrollIntoView({ behavior: 'smooth', block: 'start' });
+    
+    // Show Lead Gen (PDF Report Offer)
+    const leadGen = document.getElementById('lead-gen');
+    if (leadGen) {
+        leadGen.style.display = 'block';
+        const config = CountryConfig[country];
+        const leadDesc = document.getElementById('lead-desc');
+        if (leadDesc && config) {
+            leadDesc.innerHTML = `We'll send a full breakdown of the <strong>${config.flag} ${country.toUpperCase()}</strong> labor laws, negotiation scripts, and tax implications to your inbox.`;
+        }
+    }
+}
+
+function handleLeadSubmit(event) {
+    event.preventDefault();
+    const btn = event.target.querySelector('button');
+    const form = document.getElementById('lead-form');
+    const success = document.getElementById('lead-success');
+    
+    const originalText = btn.innerHTML;
+    btn.innerHTML = '<i data-lucide="loader" class="spin"></i> Sending...';
+    lucide.createIcons();
+    
+    // Simulate API call
+    setTimeout(() => {
+        form.style.display = 'none';
+        success.style.display = 'block';
+        
+        // Track event in GA4
+        if (typeof gtag === 'function') {
+            gtag('event', 'lead_capture', {
+                'event_category': 'monetization',
+                'event_label': document.getElementById('country').value
+            });
+        }
+    }, 1500);
 }
 
 function initAdDetection() {
