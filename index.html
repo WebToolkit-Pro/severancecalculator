@@ -26,6 +26,8 @@
         content="https://severancecalculator.xyz/assets/og-image.png">
     <link rel="stylesheet" href="css/style.css">
     <script src="https://unpkg.com/lucide@latest"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/jspdf/2.5.1/jspdf.umd.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/html2canvas/1.4.1/html2canvas.min.js"></script>
     <!-- Vercel Web Analytics -->
     <script>
         window.va = window.va || function () { (window.vaq = window.vaq || []).push(arguments); };
@@ -271,6 +273,38 @@
                     <span id="rate-msg">Be the first to rate this calculation!</span>
                 </div>
                 <div id="res-sub" style="font-size: 15px; opacity: 0.8;">Based on local labor laws</div>
+                
+                <button onclick="openLeadModal()" class="btn-pdf">
+                    <i data-lucide="file-text"></i> Download Official Report (PDF)
+                </button>
+                <p style="font-size: 10px; opacity: 0.5; margin-top: 10px;">Private • Secure • Professional</p>
+            </div>
+
+            <!-- Lead Gen Modal -->
+            <div id="lead-modal" class="modal" style="display:none;">
+                <div class="modal-content card">
+                    <button class="close-modal" onclick="closeLeadModal()"><i data-lucide="x"></i></button>
+                    <div class="modal-header">
+                        <div class="badge">Secure Report Delivery</div>
+                        <h3>Get Your 2026 Legal Report</h3>
+                        <p>Where should we send a permanent copy of your severance breakdown?</p>
+                    </div>
+                    <form id="lead-form" onsubmit="handleLeadSubmit(event)">
+                        <div class="input-group">
+                            <label><i data-lucide="mail"></i> Professional Email</label>
+                            <input type="email" id="lead-email" placeholder="name@company.com" required>
+                        </div>
+                        <button type="submit" class="btn-calc">
+                            <i data-lucide="download-cloud"></i> Send & Download PDF
+                        </button>
+                        <button type="button" onclick="generatePDF(); closeLeadModal();" class="btn-skip">
+                            I'll just download for now →
+                        </button>
+                    </form>
+                    <p class="privacy-note">
+                        <i data-lucide="shield-check"></i> Privacy Policy: We never share your data. Zero tracking, zero spam.
+                    </p>
+                </div>
             </div>
             <div class="card">
                 <h3 class="card-h"><i data-lucide="scroll"></i> Legal Basis & Formula</h3>

@@ -22,6 +22,102 @@ function rate(n) {
     if (container) container.style.pointerEvents = 'none';
 }
 
+// --- PDF GENERATION ---
+async function generatePDF() {
+    const { jsPDF } = window.jspdf;
+    const doc = new jsPDF();
+    
+    // Get Data
+    const country = document.getElementById('country').options[document.getElementById('country').selectedIndex].text;
+    const amount = document.getElementById('res-amount').innerText;
+    const salary = document.getElementById('salary').value;
+    const years = document.getElementById('years').value;
+    const reason = document.getElementById('reason').options[document.getElementById('reason').selectedIndex].text;
+    const date = new Date().toLocaleDateString();
+
+    // Branding
+    doc.setFillColor(15, 23, 42); // Dark Navy
+    doc.rect(0, 0, 210, 40, 'F');
+    
+    doc.setTextColor(255, 255, 255);
+    doc.setFontSize(22);
+    doc.text("SeveranceCalculator.xyz", 20, 20);
+    doc.setFontSize(10);
+    doc.text("Official 2026 Labor Law Estimation Report", 20, 30);
+    
+    // Content
+    doc.setTextColor(0, 0, 0);
+    doc.setFontSize(16);
+    doc.text("Severance Payout Breakdown", 20, 60);
+    
+    doc.setDrawColor(200, 200, 200);
+    doc.line(20, 65, 190, 65);
+    
+    doc.setFontSize(12);
+    doc.text(`Date Generated: ${date}`, 20, 75);
+    doc.text(`Jurisdiction: ${country}`, 20, 85);
+    doc.text(`Termination Reason: ${reason}`, 20, 95);
+    
+    doc.setFillColor(248, 250, 252);
+    doc.rect(20, 110, 170, 40, 'F');
+    
+    doc.setFont("helvetica", "bold");
+    doc.text("ESTIMATED SETTLEMENT:", 30, 125);
+    doc.setFontSize(24);
+    doc.setTextColor(59, 130, 246);
+    doc.text(amount, 30, 140);
+    
+    doc.setTextColor(0, 0, 0);
+    doc.setFontSize(12);
+    doc.setFont("helvetica", "normal");
+    doc.text("Calculation Variables:", 20, 170);
+    doc.text(`- Basic Monthly Salary: ${salary}`, 30, 180);
+    doc.text(`- Total Service Tenure: ${years} Years`, 30, 190);
+    
+    // Disclaimer
+    doc.setFontSize(9);
+    doc.setTextColor(150, 150, 150);
+    const disclaimer = "Disclaimer: This report is an estimation based on standard 2026 labor law formulas. It does not constitute legal advice. Please consult with a qualified labor attorney or HR professional for final verification.";
+    const splitDisclaimer = doc.splitTextToSize(disclaimer, 170);
+    doc.text(splitDisclaimer, 20, 240);
+    
+    doc.text("Powered by WebToolkit Pro - Private Client-Side Calculation", 20, 260);
+    
+    // Save
+    doc.save(`Severance_Report_${country.split(' ')[0]}.pdf`);
+}
+
+// --- LEAD GEN LOGIC ---
+function openLeadModal() {
+    document.getElementById('lead-modal').style.display = 'flex';
+    lucide.createIcons();
+}
+
+function closeLeadModal() {
+    document.getElementById('lead-modal').style.display = 'none';
+}
+
+function handleLeadSubmit(e) {
+    e.preventDefault();
+    const email = document.getElementById('lead-email').value;
+    
+    // In a real app, you would send this to your ESP (e.g. Mailchimp, ConvertKit)
+    console.log(`Lead Captured: ${email}`);
+    
+    // For now, we store locally to prove capture
+    const leads = JSON.parse(localStorage.getItem('captured_leads') || '[]');
+    leads.push({ email, date: new Date().toISOString() });
+    localStorage.setItem('captured_leads', JSON.stringify(leads));
+    
+    // Download the PDF
+    generatePDF();
+    
+    // Close modal
+    closeLeadModal();
+    
+    alert("Success! Your professional report has been generated.");
+}
+
 const CountryConfig = {
     usa: { sym: '$', name: 'USD', flag: '🇺🇸' },
     uk: { sym: '£', name: 'GBP', flag: '🇬🇧' },
