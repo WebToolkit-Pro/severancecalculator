@@ -11,7 +11,7 @@ files.forEach(file => {
         
         // 1. Add Canonical if missing
         if (!content.includes('rel="canonical"')) {
-            const canonical = `<link rel="canonical" href="https://www.severancecalculator.xyz/blog/${file}">`;
+            const canonical = `<link rel="canonical" href="https://severancecalculator.xyz/blog/${file}">`;
             content = content.replace('</head>', `    ${canonical}\n</head>`);
         }
         
@@ -34,7 +34,7 @@ files.forEach(file => {
       "publisher": {
         "@type": "Organization",
         "name": "SeveranceCalculator.xyz",
-        "logo": { "@type": "ImageObject", "url": "https://www.severancecalculator.xyz/assets/favicon.png" }
+        "logo": { "@type": "ImageObject", "url": "https://severancecalculator.xyz/assets/favicon.png" }
       },
       "datePublished": "2025-01-01"
     }

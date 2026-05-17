@@ -2,7 +2,7 @@ const fs = require('fs');
 const path = require('path');
 
 const rootDir = 'c:/xampp/htdocs/webtoolkit-pro/severance-calculator-repo';
-const baseUrl = 'https://www.severancecalculator.xyz';
+const baseUrl = 'https://severancecalculator.xyz';
 const urls = [];
 
 function scan(dir, relPath = '') {
