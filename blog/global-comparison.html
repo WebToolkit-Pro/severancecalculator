@@ -1,30 +1,28 @@
-﻿<!DOCTYPE html>
+<!DOCTYPE html>
 <html lang="en">
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <meta name="HandheldFriendly" content="True">
     <meta name="MobileOptimized" content="320">
-    <!-- Mobile & PWA Optimization -->
     <meta name="theme-color" content="#0f172a">
     <link rel="apple-touch-icon" href="/assets/favicon.png">
     <meta name="mobile-web-app-capable" content="yes">
     <meta name="apple-mobile-web-app-status-bar-style" content="black-translucent">
     <link rel="icon" type="image/png" href="/assets/favicon.png">
-    <title>Severance vs Gratuity Guide 2026 — Global Comparison</title>
+    <title>Severance Pay by Country 2026: Complete Global Guide + Calculator</title>
     <!-- Open Graph -->
-    <meta property="og:title" content="Severance vs Gratuity Guide 2026 — Global Comparison">
-    <meta property="og:description" content="Calculate your exact Severance pay for USA, UK, UAE, India, Pakistan & more. Based on official 2026 labor laws.">
+    <meta property="og:title" content="Severance Pay by Country 2026: Complete Global Guide + Calculator">
+    <meta property="og:description" content="Compare statutory severance rules across 30+ countries including USA, UK, Canada, Australia, UAE, India, and more. With built-in 2026 calculator.">
     <meta property="og:image" content="https://severancecalculator.xyz/assets/og-image.png">
     <meta property="og:url" content="https://severancecalculator.xyz/blog/global-comparison">
     <meta name="twitter:card" content="summary_large_image">
     <meta name="twitter:image" content="https://severancecalculator.xyz/assets/og-image.png">
+    <meta name="description" content="Compare statutory severance rules across 30+ countries including USA, UK, Canada, Australia, UAE, India, and more. With built-in 2026 calculator.">
     <link rel="stylesheet" href="../css/style.css">
     <script src="https://unpkg.com/lucide@latest"></script>
-    <!-- Vercel Web Analytics -->
-    <script>
-        window.va = window.va || function () { (window.vaq = window.vaq || []).push(arguments); };
-    </script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/jspdf/2.5.1/jspdf.umd.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/html2canvas/1.4.1/html2canvas.min.js"></script>
     <script defer src="/_vercel/insights/script.js"></script>
     <!-- Google Analytics (GA4) -->
     <script async src="https://www.googletagmanager.com/gtag/js?id=G-NF93ZYGJVT"></script>
@@ -42,28 +40,39 @@
             y=l.getElementsByTagName(r)[0];y.parentNode.insertBefore(t,y);
         })(window, document, "clarity", "script", "wow00r7fh4");
     </script>
-<meta name="description" content="Access the official redundancy pay calculation formula by country in our 2026 global guide. Compare laws for USA, UK, UAE, and India.">
     <link rel="canonical" href="https://severancecalculator.xyz/blog/global-comparison">
     <!-- JSON-LD SCHEMA (GEO/AIO Optimization) -->
     <script type="application/ld+json">
     {
       "@context": "https://schema.org",
       "@type": "Article",
-      "headline": "Severance vs Gratuity Guide 2026 — Global Comparison",
-      "description": "Compare severance pay and redundancy laws across Multiple Countries including USA, UK, UAE, and India in our 2026 global report.",
+      "headline": "Severance Pay by Country 2026: Complete Global Guide + Calculator",
+      "description": "Calculate your severance pay accurately in 2026. Compare statutory severance rules across 30+ countries including USA, UK, Canada, Australia, Pakistan, UAE, India, and more. Updated formulas, latest law changes, and free calculator.",
       "author": { "@type": "Organization", "name": "SeveranceCalculator.xyz" },
       "publisher": {
         "@type": "Organization",
         "name": "SeveranceCalculator.xyz",
         "logo": { "@type": "ImageObject", "url": "https://severancecalculator.xyz/assets/favicon.png" }
       },
-      "datePublished": "2026-01-01"
+      "datePublished": "2026-05-17",
+      "dateModified": "2026-05-17"
+    }
+    </script>
+    <script type="application/ld+json">
+    {
+      "@context": "https://schema.org",
+      "@type": "FAQPage",
+      "mainEntity": [
+        {"@type":"Question","name":"Which country has the highest statutory severance pay?","acceptedAnswer":{"@type":"Answer","text":"Countries like Mexico, Brazil, and Turkey offer some of the highest statutory severance packages, often requiring several months of salary plus additional tenure-based benefits."}},
+        {"@type":"Question","name":"How is statutory redundancy pay calculated in the UK?","acceptedAnswer":{"@type":"Answer","text":"Statutory redundancy pay in the UK is calculated based on age: 0.5 week's pay for each year under 22, 1 week's pay for each year between 22 and 40, and 1.5 week's pay for each year 41 and older, subject to statutory weekly caps."}},
+        {"@type":"Question","name":"Are allowances included in end-of-service gratuity calculations in the Middle East?","acceptedAnswer":{"@type":"Answer","text":"Generally, no. Middle Eastern gratuity rules (like in the UAE and Saudi Arabia) calculate gratuity based on the employee's basic salary only, excluding allowances unless stated otherwise in the contract."}}
+      ]
     }
     </script>
 </head>
 <body>
     <nav>
-        <a href="" class="topnav-brand">
+        <a href="/" class="topnav-brand">
             <i data-lucide="briefcase"></i> <span>SeveranceCalculator.xyz</span>
         </a>
         <div class="topnav-links" id="topnav-links">
@@ -76,63 +85,381 @@
             <i data-lucide="menu"></i>
         </button>
     </nav>
+
     <header>
-        <div class="badge">International Finance</div>
-        <h1>Global Comparison<br><em>Pay vs Gratuity</em></h1>
+        <div class="badge">2026 Global Labor Law Comparative Index</div>
+        <h1>Severance Pay by Country 2026<br><em>Complete Global Guide + Calculator</em></h1>
+        <p class="header-desc">Compare statutory severance packages, end-of-service gratuities, redundancy laws, and calculation formulas across 30+ jurisdictions.</p>
         <div class="breadcrumb">
-            <a href="">Home</a> <span>—</span> 
-            <a href="/blog">GUIDES</a> <span>—</span> 
-            <span>Severance vs Gratuity Guide</span>
+            <a href="/">Home</a> <span>›</span> 
+            <a href="/blog">GUIDES</a> <span>›</span> 
+            <span>Global Severance Guide</span>
         </div>
-</header>
+    </header>
+
     <main>
-        <article class="card">
-            <p>This guide provides a comprehensive overview of the labor laws and calculation rules for your region. stay updated with the latest statutory changes for 2026.</p>
-            
-                <h3>Employee Rights & Protections</h3>
-                <p>Regardless of your location, most modern labor laws provide standard protections during the severance process. Ensure you are aware of your right to a written explanation, your right to receive your final settlement within a reasonable timeframe (usually 14-30 days), and your protection against unauthorized deductions.</p>
+        <div class="container" style="display: grid; grid-template-columns: 1fr 300px; gap: 40px; max-width: 1200px; margin: 0 auto; padding: 40px 20px;">
+            <article class="card article-body">
+                <section>
+                    <p class="lead">Navigating global employment separation rules can be exceptionally challenging. Each country governs labor separation differently—ranging from at-will employment models with standard private corporate agreements to highly structured, government-mandated statutory formulas based on age, tenure, and reasons for termination.</p>
 
-                <h3>Final Settlement Checklist</h3>
-                <ul style="list-style: disc; margin: 15px 0 15px 20px; color: var(--muted); line-height: 1.8;">
-                    <li><strong>Accrued Leave:</strong> Check if you are entitled to encashment of unused vacation days.</li>
-                    <li><strong>Notice Pay:</strong> If you are terminated without notice, you may be entitled to pay-in-lieu.</li>
-                    <li><strong>Tax Certificates:</strong> Ensure you receive all necessary tax documentation for your final year of service.</li>
-                    <li><strong>Experience Letter:</strong> A mandatory requirement in many jurisdictions for your next career move.</li>
-                </ul>
+                    <div class="toc-box">
+                        <h4>Guide Index</h4>
+                        <ul>
+                            <li><a href="#trends">1. 2026 Global Severance Trends</a></li>
+                            <li><a href="#comparison-table">2. Global Comparison Table (30+ Countries)</a></li>
+                            <li><a href="#deep-dives">3. Regional Deep-Dives (US, UK, Canada, Australia, India, UAE, and more)</a></li>
+                            <li><a href="#interactive-calculator">4. Live Global Calculator & Report Tool</a></li>
+                            <li><a href="#negotiation">5. High-Impact Negotiation & Tax Strategies</a></li>
+                            <li><a href="#faq">6. Frequently Asked Questions (FAQ)</a></li>
+                        </ul>
+                    </div>
 
-                <h3>How to Negotiate Your Severance</h3>
-                <p>If you believe your severance calculation is incorrect or unfair, start by requesting a detailed breakdown from your HR department. Compare it against the official laws cited in this guide. If discrepancies persist, consider seeking legal advice or contacting your local labor department or ombudsman.</p>
+                    <h2 id="trends">1. 2026 Global Severance Trends</h2>
+                    <p>In 2026, global labor markets are experiencing major statutory shifts. Driven by inflation indexing, remote borderless work, and national economic policies, many jurisdictions have reformed their minimum redundancy limits:</p>
+                    <ul>
+                        <li><strong>Inflation Indexation:</strong> Major economies like Canada and the United Kingdom have updated their statutory maximum redundancy pay caps to align with recent consumer price indices.</li>
+                        <li><strong>Middle East Modernization:</strong> The UAE and Saudi Arabia are aggressively enforcing local labor laws concerning end-of-service benefits (EOSB), mandating strict compliance and immediate disbursement rules.</li>
+                        <li><strong>Expatriate Entitlements:</strong> Expats are receiving wider protections under localized labor boards, particularly when terminated due to company restructurings.</li>
+                    </ul>
 
-                <div class="cta-box"><h4>Calculate Your Pay</h4><p>Use our official 2026 calculator to get an accurate estimate.</p><a href="/#Severance-pay-calculator-2026" class="btn-calc" style="text-decoration: none; display: inline-block; width: auto; padding: 12px 24px;">Open Calculator</a></div>
-        </article>
+                    <h2 id="comparison-table">2. Global Comparison Table</h2>
+                    <p>Below is a comparative summary of statutory termination formulas, notice periods, and 2026 changes for key international labor hubs:</p>
+
+                    <div style="overflow-x: auto; margin: 25px 0;">
+                        <table style="width:100%; border-collapse: collapse; text-align: left; font-size: 14px; line-height:1.6;">
+                            <thead>
+                                <tr style="background: rgba(15, 23, 42, 0.6); border-bottom: 2px solid var(--primary);">
+                                    <th style="padding: 12px; font-weight: 600;">Country / Region</th>
+                                    <th style="padding: 12px; font-weight: 600;">Statutory Formula</th>
+                                    <th style="padding: 12px; font-weight: 600;">Notice Period</th>
+                                    <th style="padding: 12px; font-weight: 600;">Key 2026 Status / Limit</th>
+                                </tr>
+                            </thead>
+                            <tbody>
+                                <tr style="border-bottom: 1px solid rgba(255,255,255,0.05);">
+                                    <td style="padding: 12px; font-weight:600;">🇺🇸 USA</td>
+                                    <td style="padding: 12px;">Voluntary package (Industry standard is 1-2 weeks per year)</td>
+                                    <td style="padding: 12px;">At-will (No notice, except WARN Act for 60 days)</td>
+                                    <td style="padding: 12px;">No federal requirement; governed by agreement / state WARN rules</td>
+                                </tr>
+                                <tr style="border-bottom: 1px solid rgba(255,255,255,0.05);">
+                                    <td style="padding: 12px; font-weight:600;">🇬🇧 United Kingdom</td>
+                                    <td style="padding: 12px;">0.5 to 1.5 weeks' pay per year of service (Age-dependent)</td>
+                                    <td style="padding: 12px;">1 week per year (Max 12 weeks)</td>
+                                    <td style="padding: 12px;">Statutory weekly redundancy cap updated to &pound;700/week</td>
+                                </tr>
+                                <tr style="border-bottom: 1px solid rgba(255,255,255,0.05);">
+                                    <td style="padding: 12px; font-weight:600;">🇨🇦 Canada</td>
+                                    <td style="padding: 12px;">1 to 2 weeks' pay per year of service (Provincial minimums)</td>
+                                    <td style="padding: 12px;">1 to 8 weeks</td>
+                                    <td style="padding: 12px;">Common law requirements may mandate up to 24 months for long service</td>
+                                </tr>
+                                <tr style="border-bottom: 1px solid rgba(255,255,255,0.05);">
+                                    <td style="padding: 12px; font-weight:600;">🇦🇺 Australia</td>
+                                    <td style="padding: 12px;">4 to 16 weeks of base pay (NES redundancy scale)</td>
+                                    <td style="padding: 12px;">1 to 4 weeks</td>
+                                    <td style="padding: 12px;">Statutory National Employment Standards (NES) rules apply</td>
+                                </tr>
+                                <tr style="border-bottom: 1px solid rgba(255,255,255,0.05);">
+                                    <td style="padding: 12px; font-weight:600;">🇮🇳 India</td>
+                                    <td style="padding: 12px;">15 days' salary for every year served (15/26 formula)</td>
+                                    <td style="padding: 12px;">30 to 90 days</td>
+                                    <td style="padding: 12px;">Payment of Gratuity Act tax-free cap maintained at &rupee;20 Lakh</td>
+                                </tr>
+                                <tr style="border-bottom: 1px solid rgba(255,255,255,0.05);">
+                                    <td style="padding: 12px; font-weight:600;">🇵🇰 Pakistan</td>
+                                    <td style="padding: 12px;">30 days' average wages per year of service (except piece-rate)</td>
+                                    <td style="padding: 12px;">1 month or pay in lieu</td>
+                                    <td style="padding: 12px;">Standing Orders Ordinance 1968 rules strictly enforced</td>
+                                </tr>
+                                <tr style="border-bottom: 1px solid rgba(255,255,255,0.05);">
+                                    <td style="padding: 12px; font-weight:600;">🇦🇪 UAE</td>
+                                    <td style="padding: 12px;">21 days' basic salary (first 5 years), 30 days thereafter</td>
+                                    <td style="padding: 12px;">30 to 90 days</td>
+                                    <td style="padding: 12px;">Decree-Law No. 33 strict guidelines; basic salary exclusive of allowances</td>
+                                </tr>
+                                <tr style="border-bottom: 1px solid rgba(255,255,255,0.05);">
+                                    <td style="padding: 12px; font-weight:600;">🇸🇦 Saudi Arabia</td>
+                                    <td style="padding: 12px;">15 days' basic salary (first 5 years), 30 days thereafter</td>
+                                    <td style="padding: 12px;">60 days (monthly employees)</td>
+                                    <td style="padding: 12px;">Article 84 & 85 rules; 100% award for termination, fractional for resignation</td>
+                                </tr>
+                                <tr style="border-bottom: 1px solid rgba(255,255,255,0.05);">
+                                    <td style="padding: 12px; font-weight:600;">🇩🇪 Germany</td>
+                                    <td style="padding: 12px;">0.5 to 1 month of salary per year of service</td>
+                                    <td style="padding: 12px;">1 to 7 months</td>
+                                    <td style="padding: 12px;">Governed by KSchG and negotiated Social Plans (Sozialplan)</td>
+                                </tr>
+                                <tr style="border-bottom: 1px solid rgba(255,255,255,0.05);">
+                                    <td style="padding: 12px; font-weight:600;">🇿🇦 South Africa</td>
+                                    <td style="padding: 12px;">1 week of severance pay for every year of completed service</td>
+                                    <td style="padding: 12px;">1 to 4 weeks</td>
+                                    <td style="padding: 12px;">Basic Conditions of Employment Act (BCEA) minimums</td>
+                                </tr>
+                            </tbody>
+                        </table>
+                    </div>
+
+                    <h2 id="deep-dives">3. Regional Deep-Dives</h2>
+
+                    <h3>🇺🇸 United States (USA)</h3>
+                    <p>There is no federal statutory mandate for severance under the Fair Labor Standards Act (FLSA). Employment is strictly "at-will" across most states. However, mass layoffs are governed by the **federal WARN Act**, requiring a 60-day advance warning or equivalent backpay in lieu of notice for employers with 100+ staff. Industry standard packages voluntarily award <strong>1 to 2 weeks of base pay per year of service</strong>, usually in exchange for signing a waiver/release of claims.</p>
+
+                    <h3>🇬🇧 United Kingdom (UK)</h3>
+                    <p>Statutory redundancy pay is a legal entitlement for staff with at least 2 years of continuous service. The calculation uses age-based multipliers:
+                        <ul>
+                            <li><strong>Under 22:</strong> 0.5 week's pay for each completed year.</li>
+                            <li><strong>Ages 22 to 40:</strong> 1 week's pay for each completed year.</li>
+                            <li><strong>Ages 41 and over:</strong> 1.5 week's pay for each completed year.</li>
+                        </ul>
+                    The statutory redundancy pay weekly wage is capped, and the total statutory payout is capped at 20 years of service.</p>
+
+                    <h3>🇨🇦 Canada</h3>
+                    <p>Termination rules in Canada are split between minimum standards under **Provincial Employment Standards Acts (ESA)**—usually 1 to 2 weeks per year of service—and **Common Law reasonable notice**. Under Common Law, judges evaluate factors like age, position, and availability of alternative employment, sometimes awarding up to <strong>2 to 4 weeks of salary per year of service</strong>, up to a maximum of 24 months.</p>
+
+                    <h3>🇦🇺 Australia</h3>
+                    <p>Australia’s National Employment Standards (NES) set a statutory redundancy scale for companies with 15 or more employees. Redundancy packages range from 4 weeks' pay for employees with 1 to 2 years of service, up to a maximum of 16 weeks' pay for 9 to 10 years of service (which drops back to 12 weeks for 10+ years due to long-service leave entitlements).</p>
+
+                    <h3>🇮🇳 India</h3>
+                    <p>Governed primarily by the **Payment of Gratuity Act 1972** (for companies with 10+ employees) and the Industrial Disputes Act. Staff with 5+ years of continuous service are entitled to gratuity calculated using the **15/26 formula**: 15 days of the last drawn basic salary for every year of completed service, using a 26-day working month basis. The current maximum tax-free gratuity payout is &rupee;20 Lakh.</p>
+
+                    <h3>🇵🇰 Pakistan</h3>
+                    <p>Under the **Industrial and Commercial Employment (Standing Orders) Ordinance 1968**, commercial establishments are legally required to pay a statutory gratuity to workers with over 1 year of service. The payout is equivalent to **30 days' average wages** for every completed year of service (calculated using the last drawn wages). This represents one of the most generous statutory baselines in South Asia.</p>
+
+                    <h3>🇦🇪 United Arab Emirates (UAE)</h3>
+                    <p>Under **UAE Labor Decree-Law No. 33 of 2021**, expat workers with at least 1 year of continuous service are entitled to an End-of-Service Gratuity calculated on their basic monthly salary (excluding allowances):
+                        <ul>
+                            <li><strong>First 5 Years:</strong> 21 days of basic salary for each year served.</li>
+                            <li><strong>Subsequent Years:</strong> 30 days of basic salary for each year served.</li>
+                        </ul>
+                    The total gratuity benefit cannot exceed 2 years of total salary payouts.</p>
+
+                    <h2 id="interactive-calculator">4. Live Global Calculator & Report Tool</h2>
+                    <p>Estimate your exact severance settlement using our 100% private, client-side global calculator. Select your country, enter your basic monthly salary, total service tenure, and age to get an instant breakdown under 2026 statutory legal formulas:</p>
+
+                    <!-- LIVE INTERACTIVE CALCULATOR -->
+                    <div style="margin: 40px 0; border: 2px solid var(--primary); padding: 8px; border-radius: 16px; background: rgba(15, 23, 42, 0.4);">
+                        <section id="calculator" class="card" style="border: none; margin-bottom: 0; box-shadow: none;">
+                            <h2 class="card-h"><span class="num">1</span> Enter Your Employment Details</h2>
+                            <div style="display: grid; grid-template-columns: repeat(auto-fit, minmax(240px, 1fr)); gap: 20px;">
+                                <div class="field">
+                                    <label for="country">Country / Region</label>
+                                    <select id="country" onchange="updateCurrency()">
+                                        <optgroup label="Middle East">
+                                            <option value="uae">🇦🇪 United Arab Emirates (UAE)</option>
+                                            <option value="saudi">🇸🇦 Saudi Arabia</option>
+                                            <option value="qatar">🇶🇦 Qatar</option>
+                                            <option value="kuwait">🇰🇼 Kuwait</option>
+                                            <option value="bahrain">🇧🇭 Bahrain</option>
+                                            <option value="oman">🇴🇲 Oman</option>
+                                        </optgroup>
+                                        <optgroup label="Europe">
+                                            <option value="uk">🇬🇧 United Kingdom (UK)</option>
+                                            <option value="germany">🇩🇪 Germany</option>
+                                            <option value="france">🇫🇷 France</option>
+                                            <option value="spain">🇪🇸 Spain</option>
+                                            <option value="italy">🇮🇹 Italy</option>
+                                            <option value="netherlands">🇳🇱 Netherlands</option>
+                                            <option value="ireland">🇮🇪 Ireland</option>
+                                            <option value="switzerland">🇨🇭 Switzerland</option>
+                                        </optgroup>
+                                        <optgroup label="Asia-Pacific">
+                                            <option value="australia">🇦🇺 Australia</option>
+                                            <option value="india">🇮🇳 India</option>
+                                            <option value="pakistan">🇵🇰 Pakistan</option>
+                                            <option value="philippines">🇵🇭 Philippines</option>
+                                            <option value="singapore">🇸🇬 Singapore</option>
+                                            <option value="malaysia">🇲🇾 Malaysia</option>
+                                            <option value="hongkong">🇭🇰 Hong Kong</option>
+                                            <option value="japan">🇯🇵 Japan</option>
+                                            <option value="southkorea">🇰🇷 South Korea</option>
+                                            <option value="newzealand">🇳🇿 New Zealand</option>
+                                        </optgroup>
+                                        <optgroup label="Americas">
+                                            <option value="usa" selected>🇺🇸 United States (USA)</option>
+                                            <option value="canada">🇨🇦 Canada</option>
+                                            <option value="brazil">🇧🇷 Brazil</option>
+                                            <option value="mexico">🇲🇽 Mexico</option>
+                                            <option value="argentina">🇦🇷 Argentina</option>
+                                        </optgroup>
+                                        <optgroup label="Africa">
+                                            <option value="southafrica">🇿🇦 South Africa</option>
+                                        </optgroup>
+                                    </select>
+                                </div>
+                                <div class="field">
+                                    <label for="salary">Monthly Basic Salary (<span class="curr-sym">$</span>)</label>
+                                    <input type="number" id="salary" placeholder="e.g. 5000">
+                                    <p style="font-size: 11px; color: var(--muted); margin-top: 5px;">Basic Salary only — exclude allowances</p>
+                                </div>
+                                <div class="field">
+                                    <label for="years">Years of service</label>
+                                    <input type="number" id="years" placeholder="e.g. 5" step="0.5">
+                                    <p style="font-size: 11px; color: var(--muted); margin-top: 5px;">Decimals allowed (e.g. 3.5 years)</p>
+                                </div>
+                                <div class="field">
+                                    <label for="age">Your Age</label>
+                                    <input type="number" id="age" placeholder="e.g. 35">
+                                    <p id="age-hint" style="font-size: 11px; color: var(--muted); margin-top: 5px;">Required for UK and age-based calculations</p>
+                                </div>
+                                <div class="field" style="grid-column: 1 / -1;">
+                                    <label for="reason">Reason for Termination</label>
+                                    <select id="reason">
+                                        <option value="layoff">Layoff / Redundancy</option>
+                                        <option value="fired">Dismissed / Fired</option>
+                                        <option value="resigned">Resigned Voluntarily</option>
+                                        <option value="mutual">Mutual Agreement</option>
+                                        <option value="retirement">Retirement</option>
+                                    </select>
+                                </div>
+                            </div>
+                            <button class="btn-calc" onclick="calculate()">
+                                <i data-lucide="calculator"></i> Calculate Severance
+                            </button>
+                            <div class="privacy-badge">
+                                <i data-lucide="shield-check"></i>
+                                <span>Privacy: All calculations are performed locally. No data is transmitted.</span>
+                            </div>
+                        </section>
+                        
+                        <section id="RESULTS" class="RESULTS-area" style="margin-top: 20px;">
+                            <div class="result-hero" style="padding: 24px;">
+                                <div style="font-size: 12px; text-transform: uppercase; letter-spacing: .1em; opacity: .8; font-weight: 600;">
+                                    Your Estimated Severance Pay</div>
+                                <div class="amount" id="res-amount" style="font-size: 40px; margin: 12px 0;">--</div>
+                                <div class="res-rating" style="margin-bottom: 12px;">
+                                    <span style="font-size: 11px; opacity: 0.6;">Help us improve:</span>
+                                    <div class="stars rating-input" style="gap: 4px;">
+                                        <i data-lucide="star" onclick="rate(1)" title="Poor"></i>
+                                        <i data-lucide="star" onclick="rate(2)" title="Fair"></i>
+                                        <i data-lucide="star" onclick="rate(3)" title="Good"></i>
+                                        <i data-lucide="star" onclick="rate(4)" title="Very Good"></i>
+                                        <i data-lucide="star" onclick="rate(5)" title="Excellent"></i>
+                                    </div>
+                                    <span id="rate-msg" style="font-size: 11px;">Be the first to rate!</span>
+                                </div>
+                                <div id="res-sub" style="font-size: 14px; opacity: 0.8;">Based on local labor laws</div>
+                                
+                                <button onclick="openLeadModal()" class="btn-pdf" style="padding: 10px 20px; font-size: 13px; width: auto; margin: 12px auto 0;">
+                                    <i data-lucide="file-text"></i> Download Official Report (PDF)
+                                </button>
+                            </div>
+
+                            <!-- Lead Gen Modal -->
+                            <div id="lead-modal" class="modal" style="display:none;">
+                                <div class="modal-content card" style="max-width: 450px;">
+                                    <button class="close-modal" onclick="closeLeadModal()"><i data-lucide="x"></i></button>
+                                    <div class="modal-header">
+                                        <div class="badge">Secure Report Delivery</div>
+                                        <h3>Get Your 2026 Legal Report</h3>
+                                        <p>Where should we send a permanent copy of your severance breakdown?</p>
+                                    </div>
+                                    <form id="lead-form" onsubmit="handleLeadSubmit(event)">
+                                        <div class="input-group">
+                                            <label><i data-lucide="mail"></i> Professional Email</label>
+                                            <input type="email" id="lead-email" placeholder="name@company.com" required>
+                                        </div>
+                                        <button type="submit" class="btn-calc">
+                                            <i data-lucide="download-cloud"></i> Send & Download PDF
+                                        </button>
+                                        <button type="button" onclick="generatePDF(); closeLeadModal();" class="btn-skip">
+                                            I'll just download for now →
+                                        </button>
+                                    </form>
+                                </div>
+                            </div>
+
+                            <div class="card" style="border: none; box-shadow: none; padding: 20px 0 0 0;">
+                                <h3 class="card-h" style="font-size: 16px;"><i data-lucide="scroll"></i> Legal Basis & Formula</h3>
+                                <div id="bkgrid" class="bkgrid" style="grid-template-columns: repeat(auto-fit, minmax(120px, 1fr)); gap: 12px;"></div>
+                                <div id="lawtext" style="font-size: 14px; color: var(--muted); line-height: 1.6; margin-top: 16px;"></div>
+                                <div id="warn-text" style="display:none; padding: 12px; border-radius: 8px; margin-top: 12px; font-size: 13px;"></div>
+                            </div>
+                        </section>
+                    </div>
+
+                    <h2 id="negotiation">5. High-Impact Negotiation & Tax Strategies</h2>
+                    <p>Getting laid off or separated is stressful, but it also represents a business transaction. Because employers want you to sign a "Release of Claims" (a legal contract preventing you from suing them), you have significant negotiation leverage:</p>
+                    
+                    <h3>Negotiation Checklist:</h3>
+                    <ul>
+                        <li><strong>Health Insurance Continuation:</strong> Negotiate for the company to fully subsidize your health premiums (like COBRA in the US) for the duration of your severance payout.</li>
+                        <li><strong>Accrued Unused Leave:</strong> Ensure all accrued, unused vacation days are fully paid out. While some jurisdictions mandate this, others require contract verification.</li>
+                        <li><strong>Outplacement Packages:</strong> Ask the employer to pay for a career transition or resume optimization coaching service.</li>
+                    </ul>
+
+                    <h3>Tax Implications (Keep More of Your Money):</h3>
+                    <p>Severance payouts are heavily taxed as supplementary income in many jurisdictions. For example, in the US, flat taxes on supplemental wages (typically 22%) apply immediately. In India, statutory gratuity payments are tax-free only up to &rupee;20 Lakh.
+                        <br><strong>Pro-Tip:</strong> If you are terminated late in the calendar year, negotiate to have your severance structured across two tax years (a process called "straddling") to keep your personal income from jumping into a higher marginal bracket.</p>
+
+                    <h2 id="faq">6. Frequently Asked Questions</h2>
+                    <div style="margin: 20px 0;">
+                        <h4 style="color:var(--primary); margin-bottom: 5px;">Q: Is severance pay legally required?</h4>
+                        <p style="margin-top:0; color:var(--muted); font-size:14px;">A: It completely depends on the country. Most Middle Eastern, South Asian, and European countries have strict, government-mandated statutory severance or redundancy formulas. In contrast, countries like the USA and Singapore follow at-will or voluntary corporate guidelines.</p>
+                        
+                        <h4 style="color:var(--primary); margin-bottom: 5px;">Q: What is basic salary vs. gross salary?</h4>
+                        <p style="margin-top:0; color:var(--muted); font-size:14px;">A: Most statutory gratuity and severance calculations (especially in the UAE, India, and Saudi Arabia) are based strictly on your <strong>basic monthly wage</strong>. They exclude housing allowances, medical benefits, bonuses, and transport subsidies unless otherwise explicitly agreed in your employment contract.</p>
+                    </div>
+
+                    <hr style="border:0; border-top:1px solid rgba(255,255,255,0.1); margin: 40px 0;">
+                    
+                    <div class="author-bio-card" style="display: flex; gap: 20px; background: rgba(255,255,255,0.02); padding: 25px; border-radius: 12px; border: 1px solid rgba(255,255,255,0.05); align-items: center;">
+                        <div style="background: var(--primary); color: white; width: 60px; height: 60px; border-radius: 50%; display: flex; align-items: center; justify-content: center; font-weight: bold; font-size: 24px; flex-shrink: 0;">
+                            WT
+                        </div>
+                        <div>
+                            <h4 style="margin:0 0 5px 0;">About WebToolkit Pro Editorial</h4>
+                            <p style="margin:0; font-size: 13px; color: var(--muted); line-height:1.6;">This guide was written by the international labor finance research desk at <a href="https://wtkpro.site" target="_blank" style="color:var(--primary); font-weight:600; text-decoration:none;">WebToolkit Pro</a>—a global collection of professional tools, converters, and labor guides designed for elite software engineers and remote workers worldwide.</p>
+                        </div>
+                    </div>
+                </section>
+            </article>
+
+            <aside>
+                <div class="card sidebar-card" style="position: sticky; top: 100px;">
+                    <h4>Related Guides</h4>
+                    <ul class="guide-links">
+                        <li><a href="usa-severance">USA Severance Laws</a></li>
+                        <li><a href="uk-redundancy">UK Redundancy Rules</a></li>
+                        <li><a href="india-gratuity">India Gratuity Guide</a></li>
+                        <li><a href="uae-gratuity">UAE Gratuity Guide</a></li>
+                        <li><a href="philippines-separation">PH Separation Pay</a></li>
+                    </ul>
+                    <hr style="margin: 20px 0; border: 0; border-top: 1px solid rgba(255,255,255,0.1);">
+                    <h4>Trust Indicators</h4>
+                    <p style="font-size: 12px; color: var(--muted);">Updated dynamically for 2026 global labor codes and tax caps.</p>
+                </div>
+            </aside>
+        </div>
     </main>
+
     <footer>
-        <div style="display: grid; grid-template-columns: repeat(auto-fit, minmax(200px, 1fr)); gap: 40px; max-width: 1000px; margin: 0 auto;">
+        <div style="display: grid; grid-template-columns: repeat(auto-fit, minmax(200px, 1fr)); gap: 40px; max-width: 1000px; margin: 0 auto; padding: 40px 20px;">
             <div>
                 <h4>SeveranceCalculator.xyz</h4>
                 <p>Professional global financial tools powered by <a href="https://wtkpro.site" target="_blank" style="color:white; font-weight:600;">WebToolkit Pro</a>.</p>
             </div>
             <div>
-                <h4>legal</h4>
+                <h4>Legal</h4>
                 <ul>
-                    <li><a href="/legal/privacy-policy" title="Privacy Policy">Privacy Policy</a></li>
-                    <li><a href="/legal/terms-and-conditions" title="Terms & Conditions">Terms & Conditions</a></li>
-                    <li><a href="/legal/disclaimer" title="Legal Disclaimer">Disclaimer</a></li>
+                    <li><a href="/legal/privacy-policy">Privacy Policy</a></li>
+                    <li><a href="/legal/terms-and-conditions">Terms & Conditions</a></li>
                 </ul>
             </div>
             <div>
-                <h4>support</h4>
+                <h4>Resources</h4>
                 <ul>
-                    <li><a href="/about" title="Learn more About Us">About Us</a></li>
-                    <li><a href="/contact" title="Contact our Support Team">Contact Us</a></li>
-                    <li><a href="/blog" title="Browse all Labor Law Guides">Labor Guides</a></li>
+                    <li><a href="/blog">Labor Law Blog</a></li>
+                    <li><a href="/about">About Us</a></li>
                 </ul>
             </div>
         </div>
         <div class="footer-bottom">
-            &copy; 2026 SeveranceCalculator.xyz. All Rights Reserved.
+            &copy; 2026 SeveranceCalculator.xyz. 100% Private Client-Side Execution.
         </div>
     </footer>
+    <script src="../js/script.js"></script>
     <script>lucide.createIcons();</script>
 </body>
 </html>
