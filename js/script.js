@@ -127,6 +127,7 @@ const CountryConfig = {
     philippines: { sym: '₱', name: 'PHP', flag: '🇵🇭' },
     saudi: { sym: 'SAR ', name: 'SAR', flag: '🇸🇦' },
     canada: { sym: 'CA$', name: 'CAD', flag: '🇨🇦' },
+    china: { sym: '¥', name: 'CNY', flag: '🇨🇳' },
     qatar: { sym: 'QAR ', name: 'QAR', flag: '🇶🇦' },
     kuwait: { sym: 'KWD ', name: 'KWD', flag: '🇰🇼' },
     bahrain: { sym: 'BHD ', name: 'BHD', flag: '🇧🇭' },
@@ -424,7 +425,47 @@ function calculate() {
         amount = salary * years;
         law = '<strong>Argentina Labor Law:</strong> 1 month of salary per year of service.';
         sub = 'Argentina Severance Estimate';
-    } else {
+    } 
+    else if (country === 'china') {
+        let fullYears = Math.floor(years);
+        let fractional = years - fullYears;
+        let roundedTenure = fullYears;
+        if (fractional >= 0.5) {
+            roundedTenure += 1;
+        } else if (fractional > 0) {
+            roundedTenure += 0.5;
+        }
+
+        let rate = salary;
+        const averageSalary = 12000;
+        const capThreshold = 3 * averageSalary;
+        let cappedMessage = '';
+        if (salary > capThreshold) {
+            rate = capThreshold;
+            roundedTenure = Math.min(roundedTenure, 12);
+            cappedMessage = 'Salary capped at 3x local average (¥36,000) and service tenure capped at 12 years.';
+        }
+
+        let severanceFactor = roundedTenure;
+        if (reason === 'layoff') {
+            severanceFactor += 1;
+        } else if (reason === 'resigned') {
+            eligible = false;
+            warn = 'In China, voluntary resignation does not entitle you to statutory severance pay.';
+        }
+
+        amount = rate * severanceFactor;
+
+        breakdown = [
+            { l: 'Effective Salary Rate', v: fmt(rate, 'china') },
+            { l: 'Rounded Service Years', v: roundedTenure.toFixed(1) + ' yrs' },
+            { l: 'Severance Factor', v: (reason === 'layoff' ? 'N+1 (' : 'N (') + severanceFactor + ' months)' }
+        ];
+
+        law = `<strong>PRC Labor Contract Law Article 47:</strong> 1 month's salary per year of service. Rounded up to full year if ≥6 months, or 0.5 month if <6 months. ${cappedMessage}`;
+        sub = reason === 'layoff' ? 'China Statutory Severance (N+1)' : 'China Statutory Severance (N)';
+    }
+    else {
         // Fallback for any missed countries
         amount = salary * years;
         law = '<strong>Standard Statutory Estimate:</strong> Based on general labor law principles of one month per year.';
