@@ -97,9 +97,9 @@ function closeLeadModal() {
     document.getElementById('lead-modal').style.display = 'none';
 }
 
-function handleLeadSubmit(e) {
+function handleModalLeadSubmit(e) {
     e.preventDefault();
-    const email = document.getElementById('lead-email').value;
+    const email = document.getElementById('lead-email-modal').value;
     
     // In a real app, you would send this to your ESP (e.g. Mailchimp, ConvertKit)
     console.log(`Lead Captured: ${email}`);
@@ -530,10 +530,10 @@ function calculate() {
     }
 }
 
-function handleLeadSubmit(event) {
+function handleInlineLeadSubmit(event) {
     event.preventDefault();
     const btn = event.target.querySelector('button');
-    const form = document.getElementById('lead-form');
+    const form = event.target;
     const success = document.getElementById('lead-success');
     
     const originalText = btn.innerHTML;

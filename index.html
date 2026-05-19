@@ -24,6 +24,12 @@
     <meta name="twitter:card" content="summary_large_image">
     <meta name="twitter:image"
         content="https://severancecalculator.xyz/assets/og-image.png">
+    <link rel="preconnect" href="https://cdnjs.cloudflare.com" />
+    <link rel="preconnect" href="https://unpkg.com" />
+    <link rel="preconnect" href="https://www.googletagmanager.com" />
+    <link rel="preconnect" href="https://pagead2.googlesyndication.com" />
+    <link rel="dns-prefetch" href="https://cdnjs.cloudflare.com" />
+    <link rel="dns-prefetch" href="https://unpkg.com" />
     <link rel="stylesheet" href="css/style.css">
     <script src="https://unpkg.com/lucide@latest"></script>
     <script src="https://cdnjs.cloudflare.com/ajax/libs/jspdf/2.5.1/jspdf.umd.min.js"></script>
@@ -295,10 +301,10 @@
                         <h3>Get Your 2026 Legal Report</h3>
                         <p>Where should we send a permanent copy of your severance breakdown?</p>
                     </div>
-                    <form id="lead-form" onsubmit="handleLeadSubmit(event)">
+                    <form id="lead-form-modal" onsubmit="handleModalLeadSubmit(event)">
                         <div class="input-group">
                             <label><i data-lucide="mail"></i> Professional Email</label>
-                            <input type="email" id="lead-email" placeholder="name@company.com" required>
+                            <input type="email" id="lead-email-modal" placeholder="name@company.com" required>
                         </div>
                         <button type="submit" class="btn-calc">
                             <i data-lucide="download-cloud"></i> Send & Download PDF
@@ -339,13 +345,13 @@
                         <p id="lead-desc" style="font-size: 14px; color: var(--muted); margin-bottom: 20px;">We'll send a full breakdown of labor laws, negotiation scripts, and tax implications to your inbox.</p>
                     </div>
                 </div>
-                <form id="lead-form" onsubmit="handleLeadSubmit(event)">
+                <form id="lead-form-inline" onsubmit="handleInlineLeadSubmit(event)">
                     <div style="display: grid; grid-template-columns: 1fr 1fr; gap: 12px; margin-bottom: 12px;">
                         <div class="field" style="margin-bottom: 0;">
-                            <input type="text" id="lead-name" placeholder="Your Name" required style="background: rgba(0,0,0,0.2);">
+                            <input type="text" id="lead-name-inline" placeholder="Your Name" required style="background: rgba(0,0,0,0.2);">
                         </div>
                         <div class="field" style="margin-bottom: 0;">
-                            <input type="email" id="lead-email" placeholder="Your Email" required style="background: rgba(0,0,0,0.2);">
+                            <input type="email" id="lead-email-inline" placeholder="Your Email" required style="background: rgba(0,0,0,0.2);">
                         </div>
                     </div>
                     <button type="submit" class="btn-calc" style="margin-top: 0; background: var(--primary);">
