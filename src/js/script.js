@@ -102,7 +102,7 @@ async function handleModalLeadSubmit(e) {
     const email = document.getElementById('lead-email-modal').value;
     
     // Replace this with your actual Formspree endpoint URL
-    const FORMSPREE_ENDPOINT = "https://formspree.io/f/YOUR_FORM_ID_HERE";
+    const FORMSPREE_ENDPOINT = "https://formspree.io/f/mredlpoy";
     
     try {
         if (!FORMSPREE_ENDPOINT.includes('YOUR_FORM_ID_HERE')) {
@@ -553,7 +553,7 @@ async function handleInlineLeadSubmit(event) {
     lucide.createIcons();
     
     // Replace this with your actual Formspree endpoint URL
-    const FORMSPREE_ENDPOINT = "https://formspree.io/f/YOUR_FORM_ID_HERE";
+    const FORMSPREE_ENDPOINT = "https://formspree.io/f/mredlpoy";
     
     try {
         if (!FORMSPREE_ENDPOINT.includes('YOUR_FORM_ID_HERE')) {
