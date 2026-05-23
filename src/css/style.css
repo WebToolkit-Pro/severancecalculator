@@ -47,10 +47,10 @@ body {
     background-image: 
         radial-gradient(circle at 15% 50%, rgba(16, 185, 129, 0.08), transparent 30vw),
         radial-gradient(circle at 85% 30%, rgba(37, 99, 235, 0.05), transparent 30vw),
-        linear-gradient(135deg, rgba(13, 17, 23, 0.85), rgba(13, 17, 23, 0.98)),
+        linear-gradient(135deg, rgba(13, 17, 23, 0.6), rgba(13, 17, 23, 0.9)),
         url('../assets/world-map-bg.png');
     background-size: cover;
-    background-position: center top;
+    background-position: center -150px;
     background-attachment: fixed;
     color: var(--text);
     line-height: 1.6;
