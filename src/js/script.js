@@ -485,7 +485,30 @@ function calculate() {
     const resDiv = document.getElementById('RESULTS');
     resDiv.classList.add('show');
     
-    document.getElementById('res-amount').textContent = eligible ? fmt(amount, country) : 'Not Eligible';
+    const amountEl = document.getElementById('res-amount');
+    if (!eligible) {
+        amountEl.textContent = 'Not Eligible';
+    } else {
+        const duration = 1200; // 1.2s animation
+        const steps = 40;
+        const stepTime = duration / steps;
+        let currentStep = 0;
+        
+        const timer = setInterval(() => {
+            currentStep++;
+            const progress = currentStep / steps;
+            // ease-out-quart for smooth deceleration
+            const easedProgress = 1 - Math.pow(1 - progress, 4);
+            
+            amountEl.textContent = fmt(amount * easedProgress, country);
+            
+            if (currentStep >= steps) {
+                clearInterval(timer);
+                amountEl.textContent = fmt(amount, country); // Ensure exact final amount
+            }
+        }, stepTime);
+    }
+    
     document.getElementById('res-sub').textContent = sub;
     
     // Explicitly update law text and Why This Amount
