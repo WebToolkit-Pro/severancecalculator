@@ -135,6 +135,44 @@ nav {
     padding: 8px 20px;
     border-radius: 99px;
     font-weight: 600 !important;
+    position: relative;
+    overflow: hidden;
+    z-index: 1;
+    text-decoration: none;
+    transition: all 0.3s;
+}
+
+.nav-cta::before,
+.nav-cta::after {
+    content: '';
+    position: absolute;
+    top: 0;
+    width: 50%;
+    height: 100%;
+    background: var(--primary-dark);
+    z-index: -1;
+    transition: transform 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+}
+
+.nav-cta::before {
+    left: 0;
+    transform: scaleX(0);
+    transform-origin: left;
+}
+
+.nav-cta::after {
+    right: 0;
+    transform: scaleX(0);
+    transform-origin: right;
+}
+
+.nav-cta:hover::before,
+.nav-cta:hover::after {
+    transform: scaleX(1);
+}
+
+.nav-cta:hover {
+    box-shadow: 0 4px 12px rgba(35, 134, 54, 0.4);
 }
 
 .menu-toggle {
