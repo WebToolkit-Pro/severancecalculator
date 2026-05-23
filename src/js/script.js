@@ -28,7 +28,8 @@ async function generatePDF() {
     const doc = new jsPDF();
     
     // Get Data
-    const country = document.getElementById('country').options[document.getElementById('country').selectedIndex].text;
+    let rawCountry = document.getElementById('country').options[document.getElementById('country').selectedIndex].text;
+    const country = rawCountry.replace(/[^\w\s-()]/gi, '').trim(); // Strip emojis for PDF support
     const amount = document.getElementById('res-amount').innerText;
     const salary = document.getElementById('salary').value;
     const years = document.getElementById('years').value;
@@ -594,6 +595,9 @@ async function handleInlineLeadSubmit(event) {
     
     form.style.display = 'none';
     success.style.display = 'block';
+    
+    // Actually provide the PDF they requested
+    generatePDF();
     
     // Track event in GA4
     if (typeof gtag === 'function') {
