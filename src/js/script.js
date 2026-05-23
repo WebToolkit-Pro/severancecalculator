@@ -97,17 +97,26 @@ function closeLeadModal() {
     document.getElementById('lead-modal').style.display = 'none';
 }
 
-function handleModalLeadSubmit(e) {
+async function handleModalLeadSubmit(e) {
     e.preventDefault();
     const email = document.getElementById('lead-email-modal').value;
     
-    // In a real app, you would send this to your ESP (e.g. Mailchimp, ConvertKit)
-    console.log(`Lead Captured: ${email}`);
+    // Replace this with your actual Formspree endpoint URL
+    const FORMSPREE_ENDPOINT = "https://formspree.io/f/YOUR_FORM_ID_HERE";
     
-    // For now, we store locally to prove capture
-    const leads = JSON.parse(localStorage.getItem('captured_leads') || '[]');
-    leads.push({ email, date: new Date().toISOString() });
-    localStorage.setItem('captured_leads', JSON.stringify(leads));
+    try {
+        if (!FORMSPREE_ENDPOINT.includes('YOUR_FORM_ID_HERE')) {
+            await fetch(FORMSPREE_ENDPOINT, {
+                method: 'POST',
+                headers: { 'Content-Type': 'application/json', 'Accept': 'application/json' },
+                body: JSON.stringify({ email: email, source: 'PDF_Report_Modal' })
+            });
+        } else {
+            console.warn("Formspree endpoint not configured. Skipping network request.");
+        }
+    } catch (err) {
+        console.error("Formspree Error:", err);
+    }
     
     // Download the PDF
     generatePDF();
@@ -530,29 +539,46 @@ function calculate() {
     }
 }
 
-function handleInlineLeadSubmit(event) {
+async function handleInlineLeadSubmit(event) {
     event.preventDefault();
     const btn = event.target.querySelector('button');
     const form = event.target;
     const success = document.getElementById('lead-success');
     
+    const name = document.getElementById('lead-name-inline').value;
+    const email = document.getElementById('lead-email-inline').value;
+    
     const originalText = btn.innerHTML;
     btn.innerHTML = '<i data-lucide="loader" class="spin"></i> Sending...';
     lucide.createIcons();
     
-    // Simulate API call
-    setTimeout(() => {
-        form.style.display = 'none';
-        success.style.display = 'block';
-        
-        // Track event in GA4
-        if (typeof gtag === 'function') {
-            gtag('event', 'lead_capture', {
-                'event_category': 'monetization',
-                'event_label': document.getElementById('country').value
+    // Replace this with your actual Formspree endpoint URL
+    const FORMSPREE_ENDPOINT = "https://formspree.io/f/YOUR_FORM_ID_HERE";
+    
+    try {
+        if (!FORMSPREE_ENDPOINT.includes('YOUR_FORM_ID_HERE')) {
+            await fetch(FORMSPREE_ENDPOINT, {
+                method: 'POST',
+                headers: { 'Content-Type': 'application/json', 'Accept': 'application/json' },
+                body: JSON.stringify({ name: name, email: email, source: 'Inline_Lead_Form' })
             });
+        } else {
+            console.warn("Formspree endpoint not configured. Skipping network request.");
         }
-    }, 1500);
+    } catch (err) {
+        console.error("Formspree Error:", err);
+    }
+    
+    form.style.display = 'none';
+    success.style.display = 'block';
+    
+    // Track event in GA4
+    if (typeof gtag === 'function') {
+        gtag('event', 'lead_capture', {
+            'event_category': 'monetization',
+            'event_label': document.getElementById('country').value
+        });
+    }
 }
 
 function initAdDetection() {
