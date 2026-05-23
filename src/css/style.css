@@ -139,7 +139,11 @@ nav {
 
 /* --- HERO SECTION --- */
 header {
-    background: radial-gradient(circle at top right, #161B22, #0D1117);
+    background: linear-gradient(135deg, rgba(13, 17, 23, 0.9), rgba(13, 17, 23, 0.98)), url('../assets/world-map-bg.png');
+    background-size: cover;
+    background-position: center;
+    background-repeat: no-repeat;
+    background-blend-mode: overlay;
     padding: 80px 24px 100px;
     text-align: center;
 }
