@@ -3,6 +3,7 @@
   "version": "1.0.0",
   "description": "Dynamic, privacy-first severance pay calculator covering multiple countries",
   "scripts": {
+    "build": "node build.js",
     "build:sitemap": "node scratch/generate_sitemap.js"
   },
   "keywords": [
