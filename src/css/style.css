@@ -33,6 +33,10 @@
     --accent-mid: rgba(227, 179, 65, 0.4);
     --radius: 16px;
     --shadow: 0 10px 15px -3px rgba(0, 0, 0, 0.5);
+    
+    /* Design Engineering Easings */
+    --ease-out: cubic-bezier(0.23, 1, 0.32, 1);
+    --ease-in-out: cubic-bezier(0.77, 0, 0.175, 1);
 }
 
 * {
@@ -345,7 +349,7 @@ select:focus, input:focus {
     font-weight: 700;
     font-size: 16px;
     cursor: pointer;
-    transition: all 0.2s;
+    transition: transform 160ms var(--ease-out), filter 160ms var(--ease-out), background 200ms var(--ease-out), box-shadow 200ms var(--ease-out);
     display: flex;
     align-items: center;
     justify-content: center;
@@ -382,6 +386,11 @@ select:focus, input:focus {
     box-shadow: 0 8px 24px -6px rgba(35, 134, 54, 0.6);
 }
 
+.btn-calc:active {
+    transform: scale(0.97) translateY(-2px);
+    filter: blur(1px);
+}
+
 /* --- RESULTS AREA --- */
 .RESULTS-area {
     display: none;
@@ -389,7 +398,14 @@ select:focus, input:focus {
 
 .RESULTS-area.show {
     display: block;
-    animation: fadeIn 0.4s ease-out;
+    opacity: 1;
+    transform: translateY(0);
+    transition: opacity 400ms var(--ease-out), transform 400ms var(--ease-out);
+
+    @starting-style {
+        opacity: 0;
+        transform: translateY(15px) scale(0.98);
+    }
 }
 
 .result-hero {
@@ -428,7 +444,24 @@ select:focus, input:focus {
     border-radius: 12px;
     border: 1px solid rgba(255, 255, 255, 0.08);
     box-shadow: 0 4px 12px rgba(0, 0, 0, 0.2), inset 0 1px 0 rgba(255, 255, 255, 0.05);
+    
+    /* Enter Animation */
+    opacity: 0;
+    transform: translateY(12px);
+    animation: fadeInBki 350ms var(--ease-out) forwards;
 }
+
+@keyframes fadeInBki {
+    to {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
+
+.bki:nth-child(1) { animation-delay: 50ms; }
+.bki:nth-child(2) { animation-delay: 100ms; }
+.bki:nth-child(3) { animation-delay: 150ms; }
+.bki:nth-child(4) { animation-delay: 200ms; }
 
 .bkl {
     font-size: 11px;

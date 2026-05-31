@@ -490,24 +490,26 @@ function calculate() {
     if (!eligible) {
         amountEl.textContent = 'Not Eligible';
     } else {
-        const duration = 1200; // 1.2s animation
-        const steps = 40;
-        const stepTime = duration / steps;
-        let currentStep = 0;
+        const duration = 1000; // 1s snappy animation
+        const startTime = performance.now();
         
-        const timer = setInterval(() => {
-            currentStep++;
-            const progress = currentStep / steps;
-            // ease-out-quart for smooth deceleration
-            const easedProgress = 1 - Math.pow(1 - progress, 4);
+        function updateTicker(currentTime) {
+            const elapsed = currentTime - startTime;
+            const progress = Math.min(elapsed / duration, 1);
+            
+            // ease-out-expo for very punchy, physics-like snap
+            const easedProgress = progress === 1 ? 1 : 1 - Math.pow(2, -10 * progress);
             
             amountEl.textContent = fmt(amount * easedProgress, country);
             
-            if (currentStep >= steps) {
-                clearInterval(timer);
+            if (progress < 1) {
+                requestAnimationFrame(updateTicker);
+            } else {
                 amountEl.textContent = fmt(amount, country); // Ensure exact final amount
             }
-        }, stepTime);
+        }
+        
+        requestAnimationFrame(updateTicker);
     }
     
     document.getElementById('res-sub').textContent = sub;
