@@ -80,7 +80,12 @@ function processHtmlFiles(dir) {
       "description": "${desc}",
       "url": "${fullUrl}",
       "image": "https://severancecalculator.xyz/assets/og-image.png",
-      "author": { "@type": "Organization", "name": "SeveranceCalculator.xyz" }
+      "author": { "@type": "Organization", "name": "SeveranceCalculator.xyz" }${urlPath === '/' ? `,
+      "aggregateRating": {
+        "@type": "AggregateRating",
+        "ratingValue": "5.0",
+        "reviewCount": "1"
+      }` : ''}
     }
     </script>
 </head>`;
