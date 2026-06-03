@@ -1,5 +1,18 @@
 {
   "cleanUrls": true,
   "trailingSlash": false,
-  "outputDirectory": "dist"
+  "outputDirectory": "dist",
+  "redirects": [
+    {
+      "source": "/(.*)",
+      "has": [
+        {
+          "type": "host",
+          "value": "www.severancecalculator.xyz"
+        }
+      ],
+      "destination": "https://severancecalculator.xyz/$1",
+      "permanent": true
+    }
+  ]
 }
