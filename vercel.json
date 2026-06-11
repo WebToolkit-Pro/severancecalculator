@@ -13,6 +13,21 @@
       ],
       "destination": "https://severancecalculator.xyz/$1",
       "permanent": true
+    },
+    {
+      "source": "/uae-gratuity-law-guide/?",
+      "destination": "/blog/uae-gratuity",
+      "permanent": true
+    }
+  ],
+  "rewrites": [
+    {
+      "source": "/favicon.ico",
+      "destination": "/assets/favicon.png"
+    },
+    {
+      "source": "/apple-app-site-association",
+      "destination": "/.well-known/apple-app-site-association"
     }
   ]
 }
