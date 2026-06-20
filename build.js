@@ -108,6 +108,7 @@ function processHtmlFiles(dir) {
             content = content.replace(/<link\s+rel="canonical"[^>]*>/gi, '');
             content = content.replace(/<meta\s+property="og:[^>]*>/gi, '');
             content = content.replace(/<meta\s+name="twitter:[^>]*>/gi, '');
+            content = content.replace(/<script[^>]*src="\/_vercel\/insights\/script\.js"[^>]*><\/script>/gi, '');
             
             // Inject new meta
             content = content.replace(/<\/head>/i, semanticMeta);
