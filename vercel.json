@@ -15,7 +15,7 @@
       "permanent": true
     },
     {
-      "source": "/uae-gratuity-law-guide/?",
+      "source": "/uae-gratuity-law-guide",
       "destination": "/blog/uae-gratuity",
       "permanent": true
     }
