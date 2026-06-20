@@ -56,10 +56,20 @@ function processHtmlFiles(dir) {
 
             // Calculate URL
             let urlPath = fullPath.replace(DIST_DIR, '').replace(/\\/g, '/');
-            if (urlPath === '/index.html') urlPath = '/';
+            
+            // Remove /index.html or .html for clean URLs (matches Vercel cleanUrls: true)
+            if (urlPath.endsWith('/index.html')) {
+                urlPath = urlPath.replace('/index.html', '');
+            } else if (urlPath.endsWith('.html')) {
+                urlPath = urlPath.replace('.html', '');
+            }
+            
+            // Fallback for root
+            if (urlPath === '') urlPath = '/';
+            
             const fullUrl = 'https://severancecalculator.xyz' + urlPath;
 
-            if (urlPath.startsWith('/blog/') && urlPath !== '/blog/' && urlPath !== '/blog/index.html') {
+            if (urlPath.startsWith('/blog') && urlPath !== '/blog' && urlPath !== '/') {
                 blogUrls.push({ url: fullUrl, priority: '0.8' });
             } else {
                 mainUrls.push({ url: fullUrl, priority: urlPath === '/' ? '1.0' : '0.9' });
@@ -72,10 +82,10 @@ function processHtmlFiles(dir) {
     <meta property="og:title" content="${title}" />
     <meta property="og:description" content="${desc}" />
     <meta property="og:url" content="${fullUrl}" />
-    <meta property="og:image" content="https://severancecalculator.xyz/assets/og-image.png" />
+    <meta property="og:image" content="https://severancecalculator.xyz/assets/og-image.jpg" />
     <meta property="og:type" content="website" />
     <meta name="twitter:card" content="summary_large_image" />
-    <meta name="twitter:image" content="https://severancecalculator.xyz/assets/og-image.png" />
+    <meta name="twitter:image" content="https://severancecalculator.xyz/assets/og-image.jpg" />
     <script type="application/ld+json">
     {
       "@context": "https://schema.org",
@@ -83,7 +93,7 @@ function processHtmlFiles(dir) {
       "name": "${title}",
       "description": "${desc}",
       "url": "${fullUrl}",
-      "image": "https://severancecalculator.xyz/assets/og-image.png",
+      "image": "https://severancecalculator.xyz/assets/og-image.jpg",
       "author": { "@type": "Organization", "name": "SeveranceCalculator.xyz" }${urlPath === '/' ? `,
       "aggregateRating": {
         "@type": "AggregateRating",
