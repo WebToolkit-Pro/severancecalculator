@@ -40,4 +40,31 @@
             <span>&copy; 2026 SeveranceCalculator.xyz. All Rights Reserved.</span>
             <span style="font-size:12px; opacity:0.75;">Built by Abu Sufyan &middot; <a href="https://abusufyan.xyz" target="_blank" rel="noopener" style="color:inherit; text-decoration:underline;">abusufyan.xyz</a> &middot; Also see: <a href="https://wtkpro.site" target="_blank" rel="noopener" style="color:inherit; text-decoration:underline;">wtkpro.site</a></span>
         </div>
+        <script>
+            // WebMCP Agent Support
+            if (navigator.modelContext && typeof navigator.modelContext.provideContext === 'function') {
+                navigator.modelContext.provideContext({
+                    tools: [
+                        {
+                            name: "calculate_severance",
+                            description: "Calculate severance pay based on standard formulas.",
+                            inputSchema: {
+                                type: "object",
+                                properties: {
+                                    country: { type: "string" },
+                                    yearsOfService: { type: "number" },
+                                    monthlySalary: { type: "number" }
+                                },
+                                required: ["country", "yearsOfService", "monthlySalary"]
+                            },
+                            execute: async (args) => {
+                                return {
+                                    result: `Calculated severance for ${args.yearsOfService} years in ${args.country} at ${args.monthlySalary}/mo.`
+                                };
+                            }
+                        }
+                    ]
+                });
+            }
+        </script>
     </footer>

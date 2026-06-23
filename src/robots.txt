@@ -1,4 +1,4 @@
 User-agent: *
 Allow: /
 
-Sitemap: https://severancecalculator.xyz/sitemap_index.xml
+Content-Signal: ai-train=no, search=yes, ai-input=no

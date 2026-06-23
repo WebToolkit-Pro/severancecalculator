@@ -1,5 +1,7 @@
 const fs = require('fs');
 const path = require('path');
+const TurndownService = require('turndown');
+const turndownService = new TurndownService();
 
 const SRC_DIR = path.join(__dirname, 'src');
 const DIST_DIR = path.join(__dirname, 'dist');
@@ -110,11 +112,19 @@ function processHtmlFiles(dir) {
             content = content.replace(/<meta\s+name="twitter:[^>]*>/gi, '');
             content = content.replace(/<script[^>]*src="\/_vercel\/insights\/script\.js"[^>]*><\/script>/gi, '');
             
-            // Inject new meta
             content = content.replace(/<\/head>/i, semanticMeta);
 
             fs.writeFileSync(fullPath, content);
             console.log(`Processed: ${fullPath.replace(DIST_DIR, '')}`);
+            
+            try {
+                // Generate Markdown version for Agent Content Negotiation
+                const markdownContent = turndownService.turndown(content);
+                const mdPath = fullPath.replace('.html', '.md');
+                fs.writeFileSync(mdPath, markdownContent);
+            } catch (e) {
+                console.error('Error generating markdown for ' + fullPath, e);
+            }
         }
     }
 }

@@ -1,0 +1,16 @@
+{
+  "linkset": [
+    {
+      "anchor": "https://severancecalculator.xyz/api",
+      "service-desc": [
+        {"href": "https://severancecalculator.xyz/openapi.yaml", "type": "application/yaml"}
+      ],
+      "service-doc": [
+        {"href": "https://severancecalculator.xyz/docs/api", "type": "text/html"}
+      ],
+      "status": [
+        {"href": "https://severancecalculator.xyz/api/health", "type": "application/json"}
+      ]
+    }
+  ]
+}

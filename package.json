@@ -11,5 +11,8 @@
     "severance-pay"
   ],
   "author": "Abu Sufyan",
-  "license": "ISC"
+  "license": "ISC",
+  "dependencies": {
+    "turndown": "^7.2.4"
+  }
 }

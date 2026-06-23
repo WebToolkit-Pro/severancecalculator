@@ -20,7 +20,53 @@
       "permanent": true
     }
   ],
+  "headers": [
+    {
+      "source": "/(.*)",
+      "headers": [
+        {
+          "key": "Link",
+          "value": "</.well-known/api-catalog>; rel=\"api-catalog\", </docs/api>; rel=\"service-doc\""
+        }
+      ]
+    },
+    {
+      "source": "/.well-known/api-catalog.json",
+      "headers": [
+        {
+          "key": "Content-Type",
+          "value": "application/linkset+json"
+        }
+      ]
+    }
+  ],
   "rewrites": [
+    {
+      "source": "/.well-known/api-catalog",
+      "destination": "/.well-known/api-catalog.json"
+    },
+    {
+      "source": "/",
+      "has": [
+        {
+          "type": "header",
+          "key": "accept",
+          "value": "(.*text/markdown.*)"
+        }
+      ],
+      "destination": "/index.md"
+    },
+    {
+      "source": "/(.*)",
+      "has": [
+        {
+          "type": "header",
+          "key": "accept",
+          "value": "(.*text/markdown.*)"
+        }
+      ],
+      "destination": "/$1.md"
+    },
     {
       "source": "/favicon.ico",
       "destination": "/assets/favicon.png"

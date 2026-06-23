@@ -1,0 +1,8 @@
+{
+  "resource": "https://severancecalculator.xyz/api",
+  "authorization_servers": [
+    "https://severancecalculator.xyz"
+  ],
+  "scopes_supported": ["read", "write"],
+  "bearer_methods_supported": ["header"]
+}

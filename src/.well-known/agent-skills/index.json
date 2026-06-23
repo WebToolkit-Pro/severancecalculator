@@ -1,0 +1,12 @@
+{
+  "$schema": "https://agentskills.io/schema/index-v0.2.0.json",
+  "skills": [
+    {
+      "name": "severance-calculation",
+      "type": "tool",
+      "description": "Calculate severance pay based on global labor laws.",
+      "url": "https://severancecalculator.xyz/.well-known/agent-skills/severance.json",
+      "sha256": "placeholder-digest"
+    }
+  ]
+}

@@ -1,0 +1,14 @@
+{
+  "serverInfo": {
+    "name": "severance-calculator-mcp",
+    "version": "1.0.0"
+  },
+  "transport": {
+    "type": "sse",
+    "endpoint": "https://severancecalculator.xyz/mcp/sse"
+  },
+  "capabilities": {
+    "tools": true,
+    "resources": false
+  }
+}
