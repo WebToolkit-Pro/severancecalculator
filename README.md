@@ -1,33 +1,18 @@
-# 💼 Severance Pay Calculator 2025
+# Severance Calculator
 
-A professional, high-performance web application for calculating severance pay and end-of-service gratuity across multiple countries. This tool is built with a focus on SEO, premium design, and accurate legal formulas for 2025.
+A fast, client-side calculator ecosystem for estimating severance packages.
 
-🌐 **Live Site:** [https://www.severancecalculator.xyz](https://www.severancecalculator.xyz)
+## 🚀 V2.0 Architecture Compliant
 
----
+> **HQ Agent V2.0 Compliant:** This repository adheres to the Netizen Labs Ultimate Master Blueprint. It utilizes Architectural Asymmetry (Anti-Template Protocol), autonomous Daily Publisher bots, AIO Schema Blueprinting, and Emil Design Eng micro-interactions.
 
-## 🚀 Features
+## 🤖 Bot Ecosystem Active
+- **Daily Publisher:** Sweeps `content/drafts/` daily to deploy new articles.
+- **Self-Healer:** Runs typechecking and Vite builds on every commit. Auto-heals via Git rollback if failed.
 
-- **Multi-Country Support:** USA, UK, UAE, India, Pakistan, Philippines, Saudi Arabia, and Canada.
-- **2025 Legal Formulas:** Updated statutory formulas for redundancy, gratuity, and separation pay.
-- **Premium Design:** Modern UI with glassmorphism, responsive grid layouts, and Lucide icons.
-- **Advanced SEO:** 
-  - Localized meta tags for each supported region.
-  - Separate blog pages for deep content indexing.
-  - JSON-LD Structured Data for `WebApplication`, `FAQPage`, and `BreadcrumbList`.
-- **Ad Integration:** Intelligent reveal logic that displays content after ads load to optimize revenue.
-- **High Performance:** Lightweight Vanilla JS and CSS for maximum speed.
+## Development
 
-## 🛠️ Technology Stack
-
-- **HTML5:** Semantic structure for optimal accessibility.
-- **Vanilla CSS:** Custom design system with robust grid layouts to prevent overlapping.
-- **Vanilla JavaScript:** Fast, efficient calculator logic and DOM manipulation.
-- **Lucide Icons:** Premium SVG icons for consistent rendering.
-
-## 🔗 Powered By
-
-This project is part of the **WebToolkit Pro** ecosystem. For more developer and professional tools, visit:
-👉 **[WebToolkit Pro (wtkpro.site)](https://wtkpro.site)**
-
-© 2025 SeveranceCalculator.xyz - A project by [WebToolkit Pro](https://wtkpro.site).
+```bash
+npm install
+npm run dev
+```
