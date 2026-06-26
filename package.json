@@ -4,7 +4,8 @@
   "description": "Dynamic, privacy-first severance pay calculator covering multiple countries",
   "scripts": {
     "build": "node build.js",
-    "build:sitemap": "node scratch/generate_sitemap.js"
+    "build:sitemap": "node scratch/generate_sitemap.js",
+    "typecheck": "echo \"No typecheck needed\""
   },
   "keywords": [
     "severance-calculator",
@@ -13,6 +14,7 @@
   "author": "Abu Sufyan",
   "license": "ISC",
   "dependencies": {
+    "nodemailer": "^9.0.1",
     "turndown": "^7.2.4"
   }
 }
